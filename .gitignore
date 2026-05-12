@@ -1,0 +1,17 @@
+# Built application files
+android-app/build/
+android-app/app/build/
+android-app/.gradle/
+android-app/.idea/
+
+# Local configuration files
+android-app/local.properties
+backend/.env
+backend/uploads/
+
+# Node modules
+backend/node_modules/
+
+# OS generated files
+.DS_Store
+Thumbs.db
