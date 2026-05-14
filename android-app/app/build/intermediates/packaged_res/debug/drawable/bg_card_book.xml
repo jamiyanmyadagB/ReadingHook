@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <!-- Default state - white background with subtle shadow effect -->
+    <item android:state_pressed="false">
+        <layer-list>
+            <!-- Main card background -->
+            <item>
+                <shape android:shape="rectangle">
+                    <solid android:color="@color/background_card" />
+                    <corners android:radius="8dp" />
+                </shape>
+            </item>
+            
+            <!-- Subtle shadow for elevation effect -->
+            <item android:bottom="2dp" android:left="2dp" android:right="2dp" android:top="2dp">
+                <shape android:shape="rectangle">
+                    <solid android:color="@color/overlay" />
+                    <corners android:radius="8dp" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+    
+    <!-- Pressed state - subtle background change -->
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/background_secondary" />
+            <corners android:radius="8dp" />
+        </shape>
+    </item>
+</selector>

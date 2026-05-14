@@ -1,0 +1,59 @@
+com.readingnook.memoryplus.app-lifecycle-viewmodel-ktx-2.7.0-0 C:\Users\baata\.gradle\caches\transforms-3\08409a00c4f13632228392e306d5a97a\transformed\lifecycle-viewmodel-ktx-2.7.0\res
+com.readingnook.memoryplus.app-customview-poolingcontainer-1.0.0-1 C:\Users\baata\.gradle\caches\transforms-3\0910aae4ff812df2730a2b83bdae40fe\transformed\customview-poolingcontainer-1.0.0\res
+com.readingnook.memoryplus.app-lifecycle-viewmodel-savedstate-2.7.0-2 C:\Users\baata\.gradle\caches\transforms-3\0ee408a7b39f4c2163ed62443b2ccd72\transformed\lifecycle-viewmodel-savedstate-2.7.0\res
+com.readingnook.memoryplus.app-room-runtime-2.6.1-3 C:\Users\baata\.gradle\caches\transforms-3\1905060edceb2c0087e7765309433a00\transformed\room-runtime-2.6.1\res
+com.readingnook.memoryplus.app-navigation-runtime-2.7.7-4 C:\Users\baata\.gradle\caches\transforms-3\19aad61cd060f91ca36cc215c3bcc590\transformed\navigation-runtime-2.7.7\res
+com.readingnook.memoryplus.app-lifecycle-service-2.7.0-5 C:\Users\baata\.gradle\caches\transforms-3\1cf1e6ac0ae35aa96fb4620ee117edf3\transformed\lifecycle-service-2.7.0\res
+com.readingnook.memoryplus.app-appcompat-resources-1.6.1-6 C:\Users\baata\.gradle\caches\transforms-3\1d11fd3bab567ce48a488cc9f1e43924\transformed\appcompat-resources-1.6.1\res
+com.readingnook.memoryplus.app-constraintlayout-2.1.4-7 C:\Users\baata\.gradle\caches\transforms-3\22bc26abf39e8d429121d42ba11cd5e4\transformed\constraintlayout-2.1.4\res
+com.readingnook.memoryplus.app-core-runtime-2.2.0-8 C:\Users\baata\.gradle\caches\transforms-3\25e9c266d13753b241bc7a0350ecce96\transformed\core-runtime-2.2.0\res
+com.readingnook.memoryplus.app-savedstate-ktx-1.2.1-9 C:\Users\baata\.gradle\caches\transforms-3\2929c1553819c59ce4bf4cba67fc8225\transformed\savedstate-ktx-1.2.1\res
+com.readingnook.memoryplus.app-profileinstaller-1.3.1-10 C:\Users\baata\.gradle\caches\transforms-3\3de4af53588b6988799ead4e7b91094b\transformed\profileinstaller-1.3.1\res
+com.readingnook.memoryplus.app-navigation-fragment-2.7.7-11 C:\Users\baata\.gradle\caches\transforms-3\481bd9faa2df4bd4a0f3602b2b0d6354\transformed\navigation-fragment-2.7.7\res
+com.readingnook.memoryplus.app-glide-4.16.0-12 C:\Users\baata\.gradle\caches\transforms-3\4949b8a4b6240beec78338feb4bf9c5a\transformed\glide-4.16.0\res
+com.readingnook.memoryplus.app-lifecycle-process-2.7.0-13 C:\Users\baata\.gradle\caches\transforms-3\4bbf9e33ffefdc0f1f86ca85eb80aa22\transformed\lifecycle-process-2.7.0\res
+com.readingnook.memoryplus.app-emoji2-1.2.0-14 C:\Users\baata\.gradle\caches\transforms-3\51c225e8532d7e09695c15cc04d4e631\transformed\emoji2-1.2.0\res
+com.readingnook.memoryplus.app-core-1.13.0-15 C:\Users\baata\.gradle\caches\transforms-3\54c5ea7b527f955ba2222510e9e6ca4c\transformed\core-1.13.0\res
+com.readingnook.memoryplus.app-navigation-common-ktx-2.7.7-16 C:\Users\baata\.gradle\caches\transforms-3\565bf3790983eb4d86f6e98997880f8f\transformed\navigation-common-ktx-2.7.7\res
+com.readingnook.memoryplus.app-appcompat-1.6.1-17 C:\Users\baata\.gradle\caches\transforms-3\5b74a19ee8450391f165ba0ba5038d32\transformed\appcompat-1.6.1\res
+com.readingnook.memoryplus.app-navigation-fragment-ktx-2.7.7-18 C:\Users\baata\.gradle\caches\transforms-3\608a9e97f4b6817d2c509b061208973b\transformed\navigation-fragment-ktx-2.7.7\res
+com.readingnook.memoryplus.app-activity-1.9.2-19 C:\Users\baata\.gradle\caches\transforms-3\663484f179a229a3423c9238e1b224f2\transformed\activity-1.9.2\res
+com.readingnook.memoryplus.app-material-1.11.0-20 C:\Users\baata\.gradle\caches\transforms-3\6870adecb0c2be93f492eae3ecc11c7f\transformed\material-1.11.0\res
+com.readingnook.memoryplus.app-viewpager2-1.1.0-beta02-21 C:\Users\baata\.gradle\caches\transforms-3\69c4cd4bbee927374db7e3d1519867c4\transformed\viewpager2-1.1.0-beta02\res
+com.readingnook.memoryplus.app-sqlite-2.4.0-22 C:\Users\baata\.gradle\caches\transforms-3\6b132a56baae7cec8dbbcb52972901be\transformed\sqlite-2.4.0\res
+com.readingnook.memoryplus.app-lifecycle-runtime-2.7.0-23 C:\Users\baata\.gradle\caches\transforms-3\6ed81553e8c34fe69b2145a461654769\transformed\lifecycle-runtime-2.7.0\res
+com.readingnook.memoryplus.app-lifecycle-livedata-ktx-2.7.0-24 C:\Users\baata\.gradle\caches\transforms-3\6fb4f87be901c33a3100e0536c31b2e8\transformed\lifecycle-livedata-ktx-2.7.0\res
+com.readingnook.memoryplus.app-navigation-ui-2.7.7-25 C:\Users\baata\.gradle\caches\transforms-3\75adf3a4ef141b8253624d42da8f0b39\transformed\navigation-ui-2.7.7\res
+com.readingnook.memoryplus.app-navigation-ui-ktx-2.7.7-26 C:\Users\baata\.gradle\caches\transforms-3\80469d8393ea683dc4589301304f9b50\transformed\navigation-ui-ktx-2.7.7\res
+com.readingnook.memoryplus.app-annotation-experimental-1.4.0-27 C:\Users\baata\.gradle\caches\transforms-3\840ee71de71a7e9d6fad4520453a8e2d\transformed\annotation-experimental-1.4.0\res
+com.readingnook.memoryplus.app-fragment-ktx-1.6.2-28 C:\Users\baata\.gradle\caches\transforms-3\8adaa89425b8d9c288d0e20d292302c8\transformed\fragment-ktx-1.6.2\res
+com.readingnook.memoryplus.app-activity-ktx-1.9.2-29 C:\Users\baata\.gradle\caches\transforms-3\8b5b243ba95fa2286c0a4398fbb245a4\transformed\activity-ktx-1.9.2\res
+com.readingnook.memoryplus.app-navigation-common-2.7.7-30 C:\Users\baata\.gradle\caches\transforms-3\9061e9901ebf7c8ac486f6c00da40a45\transformed\navigation-common-2.7.7\res
+com.readingnook.memoryplus.app-lifecycle-livedata-2.7.0-31 C:\Users\baata\.gradle\caches\transforms-3\91a7347f97e9ad9c409c3e25c72a3f2d\transformed\lifecycle-livedata-2.7.0\res
+com.readingnook.memoryplus.app-room-ktx-2.6.1-32 C:\Users\baata\.gradle\caches\transforms-3\91cef0972764df051a06119096baf647\transformed\room-ktx-2.6.1\res
+com.readingnook.memoryplus.app-slidingpanelayout-1.2.0-33 C:\Users\baata\.gradle\caches\transforms-3\9c2c7464fb746c56c19b9d64004eb637\transformed\slidingpanelayout-1.2.0\res
+com.readingnook.memoryplus.app-navigation-runtime-ktx-2.7.7-34 C:\Users\baata\.gradle\caches\transforms-3\9d3e1069c7909eb5979debd33c48795e\transformed\navigation-runtime-ktx-2.7.7\res
+com.readingnook.memoryplus.app-recyclerview-1.3.2-35 C:\Users\baata\.gradle\caches\transforms-3\9f6865bf7b0646e6abfdcc8393853678\transformed\recyclerview-1.3.2\res
+com.readingnook.memoryplus.app-savedstate-1.2.1-36 C:\Users\baata\.gradle\caches\transforms-3\a0473e72ac3ca21220ce6e85d2cb02b0\transformed\savedstate-1.2.1\res
+com.readingnook.memoryplus.app-coordinatorlayout-1.1.0-37 C:\Users\baata\.gradle\caches\transforms-3\ab37224c4ca5e567da8c28ca120e17b6\transformed\coordinatorlayout-1.1.0\res
+com.readingnook.memoryplus.app-transition-1.4.1-38 C:\Users\baata\.gradle\caches\transforms-3\b2ef5a669821527e3d6b704882ba709b\transformed\transition-1.4.1\res
+com.readingnook.memoryplus.app-lifecycle-viewmodel-2.7.0-39 C:\Users\baata\.gradle\caches\transforms-3\c1a2b1d52d9b7eef86f80045882076fb\transformed\lifecycle-viewmodel-2.7.0\res
+com.readingnook.memoryplus.app-lifecycle-livedata-core-ktx-2.7.0-40 C:\Users\baata\.gradle\caches\transforms-3\c2209994758a6e137f14e7bacb9ddf4e\transformed\lifecycle-livedata-core-ktx-2.7.0\res
+com.readingnook.memoryplus.app-startup-runtime-1.1.1-41 C:\Users\baata\.gradle\caches\transforms-3\c4b0932cc9bb404042f07229a6265e3b\transformed\startup-runtime-1.1.1\res
+com.readingnook.memoryplus.app-lifecycle-runtime-ktx-2.7.0-42 C:\Users\baata\.gradle\caches\transforms-3\c6fb642cd0a3ea89c6b3ed3397bae95c\transformed\lifecycle-runtime-ktx-2.7.0\res
+com.readingnook.memoryplus.app-sqlite-framework-2.4.0-43 C:\Users\baata\.gradle\caches\transforms-3\cdb3074cf9863860e9ed5f3af2da2030\transformed\sqlite-framework-2.4.0\res
+com.readingnook.memoryplus.app-emoji2-views-helper-1.2.0-44 C:\Users\baata\.gradle\caches\transforms-3\ce707f286529cb3a82cbdd6df544eebe\transformed\emoji2-views-helper-1.2.0\res
+com.readingnook.memoryplus.app-core-ktx-1.13.0-45 C:\Users\baata\.gradle\caches\transforms-3\e0cdacddee6b9b3356e3cfb818079d5f\transformed\core-ktx-1.13.0\res
+com.readingnook.memoryplus.app-lifecycle-livedata-core-2.7.0-46 C:\Users\baata\.gradle\caches\transforms-3\e96ec4f6b31fa1c3de5e57545f462737\transformed\lifecycle-livedata-core-2.7.0\res
+com.readingnook.memoryplus.app-fragment-1.6.2-47 C:\Users\baata\.gradle\caches\transforms-3\e9f2b4b4da4372a4e2df400aa3e9ea55\transformed\fragment-1.6.2\res
+com.readingnook.memoryplus.app-window-1.0.0-48 C:\Users\baata\.gradle\caches\transforms-3\efe5f24547640074edb7c7d0bef51a0a\transformed\window-1.0.0\res
+com.readingnook.memoryplus.app-core-splashscreen-1.0.1-49 C:\Users\baata\.gradle\caches\transforms-3\f71ead68e7e6124171920c19f18d8431\transformed\core-splashscreen-1.0.1\res
+com.readingnook.memoryplus.app-cardview-1.0.0-50 C:\Users\baata\.gradle\caches\transforms-3\f8bc77c383ddb1a034ac4b1ea1114bdf\transformed\cardview-1.0.0\res
+com.readingnook.memoryplus.app-drawerlayout-1.1.1-51 C:\Users\baata\.gradle\caches\transforms-3\faeb0f60a3cf67c0b5d2376ecb87b88a\transformed\drawerlayout-1.1.1\res
+com.readingnook.memoryplus.app-pngs-52 D:\6th semester\Android\ReadingHookProject\android-app\app\build\generated\res\pngs\debug
+com.readingnook.memoryplus.app-resValues-53 D:\6th semester\Android\ReadingHookProject\android-app\app\build\generated\res\resValues\debug
+com.readingnook.memoryplus.app-packageDebugResources-54 D:\6th semester\Android\ReadingHookProject\android-app\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.readingnook.memoryplus.app-packageDebugResources-55 D:\6th semester\Android\ReadingHookProject\android-app\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.readingnook.memoryplus.app-merged_res-56 D:\6th semester\Android\ReadingHookProject\android-app\app\build\intermediates\merged_res\debug
+com.readingnook.memoryplus.app-debug-57 D:\6th semester\Android\ReadingHookProject\android-app\app\src\debug\res
+com.readingnook.memoryplus.app-main-58 D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\res

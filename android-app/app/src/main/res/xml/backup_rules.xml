@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <!-- Include app data in backup -->
+    <include domain="sharedpref" path="."/>
+    <include domain="database" path="user_notes.db"/>
+    <exclude domain="file" path="cache/"/>
+</full-backup-content>

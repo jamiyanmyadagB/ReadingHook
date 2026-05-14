@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/background_card"
+    android:padding="24dp">
+
+    <!-- Header -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:fontFamily="@font/playfair_display_bold"
+        android:text="@string/auth_sign_up_title"
+        android:textColor="@color/text_primary"
+        android:textSize="20sp"
+        android:gravity="center" />
+
+    <!-- Name input -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        app:boxBackgroundColor="@color/background_card"
+        app:boxStrokeColor="@color/divider"
+        app:boxStrokeWidth="1dp"
+        app:hintTextColor="@color/text_hint">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/nameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_input_field"
+            android:fontFamily="@font/lato_regular"
+            android:hint="@string/auth_name_hint"
+            android:inputType="textPersonName"
+            android:textColor="@color/text_primary"
+            android:textSize="16sp"
+            android:padding="16dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Email input -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        app:boxBackgroundColor="@color/background_card"
+        app:boxStrokeColor="@color/divider"
+        app:boxStrokeWidth="1dp"
+        app:hintTextColor="@color/text_hint">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/emailEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_input_field"
+            android:fontFamily="@font/lato_regular"
+            android:hint="@string/auth_email_hint"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/text_primary"
+            android:textSize="16sp"
+            android:padding="16dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Password input -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        app:boxBackgroundColor="@color/background_card"
+        app:boxStrokeColor="@color/divider"
+        app:boxStrokeWidth="1dp"
+        app:hintTextColor="@color/text_hint"
+        app:passwordToggleEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/passwordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_input_field"
+            android:fontFamily="@font/lato_regular"
+            android:hint="@string/auth_password_hint"
+            android:inputType="textPassword"
+            android:textColor="@color/text_primary"
+            android:textSize="16sp"
+            android:padding="16dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Confirm password input -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        app:boxBackgroundColor="@color/background_card"
+        app:boxStrokeColor="@color/divider"
+        app:boxStrokeWidth="1dp"
+        app:hintTextColor="@color/text_hint"
+        app:passwordToggleEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/confirmPasswordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_input_field"
+            android:fontFamily="@font/lato_regular"
+            android:hint="@string/auth_confirm_password_hint"
+            android:inputType="textPassword"
+            android:textColor="@color/text_primary"
+            android:textSize="16sp"
+            android:padding="16dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Sign up button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/signUpButton"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@drawable/bg_rounded_button"
+        android:fontFamily="@font/lato_regular"
+        android:text="@string/auth_sign_up_button"
+        android:textColor="@color/text_on_primary"
+        android:textSize="16sp"
+        app:cornerRadius="12dp" />
+
+</LinearLayout>

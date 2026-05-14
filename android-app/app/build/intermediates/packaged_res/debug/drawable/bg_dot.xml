@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    
+    <!-- Small circular loader dot with accent color -->
+    <solid android:color="@color/accent" />
+    
+    <!-- Optional gradient for loading animation effect -->
+    <gradient
+        android:startColor="@color/accent_light"
+        android:endColor="@color/accent"
+        android:angle="45" />
+    
+    <!-- Ensure perfect circle -->
+    <size
+        android:width="8dp"
+        android:height="8dp" />
+</shape>

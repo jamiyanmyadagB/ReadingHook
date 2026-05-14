@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    
+    <!-- Background color matches primary theme -->
+    <solid android:color="@color/primary" />
+    
+    <!-- Create half circle by setting bottom corners -->
+    <corners
+        android:bottomLeftRadius="0dp"
+        android:bottomRightRadius="0dp"
+        android:topLeftRadius="200dp"
+        android:topRightRadius="200dp" />
+    
+    <!-- Optional subtle gradient for depth -->
+    <gradient
+        android:startColor="@color/primary"
+        android:endColor="@color/primary_dark"
+        android:angle="90" />
+</shape>

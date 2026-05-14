@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Colors - Warm Library Aesthetic -->
+    <color name="primary">#8D6E63</color>          <!-- Deep Mahogany Brown -->
+    <color name="primary_dark">#6D4C41</color>        <!-- Darker Mahogany -->
+    <color name="primary_light">#A0826D</color>        <!-- Light Mahogany Accent -->
+    
+    <!-- Background Colors - Parchment Theme -->
+    <color name="background_primary">#FFF8E1</color>    <!-- Warm Parchment Cream -->
+    <color name="background_secondary">#F5E6D3</color>    <!-- Slightly Darker Parchment -->
+    <color name="background_card">#FFFFFF</color>        <!-- Pure White for Cards -->
+    
+    <!-- Accent Colors - Gold Details -->
+    <color name="accent">#D4AF37</color>           <!-- Warm Gold -->
+    <color name="accent_light">#FFD700</color>        <!-- Bright Gold -->
+    <color name="accent_dark">#B8860B</color>         <!-- Dark Gold -->
+    
+    <!-- Text Colors -->
+    <color name="text_primary">#2D1810</color>        <!-- Dark Brown for Primary Text -->
+    <color name="text_secondary">#5D4037</color>      <!-- Medium Brown for Secondary Text -->
+    <color name="text_on_primary">#FFFFFF</color>       <!-- White for text on Primary -->
+    <color name="text_on_accent">#FFFFFF</color>        <!-- White for text on Accent -->
+    <color name="text_hint">#8D6E63</color>          <!-- Primary Color for Hints -->
+    
+    <!-- Status Colors -->
+    <color name="success">#4CAF50</color>             <!-- Green -->
+    <color name="warning">#FF9800</color>            <!-- Orange -->
+    <color name="error">#F44336</color>               <!-- Red -->
+    <color name="info">#2196F3</color>                <!-- Blue -->
+    
+    <!-- UI State Colors -->
+    <color name="divider">#E0E0D8</color>             <!-- Subtle Divider -->
+    <color name="overlay">#80000000</color>              <!-- Semi-transparent Black -->
+    <color name="ripple">#40FFFFFF</color>              <!-- Ripple Effect -->
+    
+    <!-- Reading Progress Colors -->
+    <color name="progress_background">#E8F5E8</color>  <!-- Light Progress Background -->
+    <color name="progress_foreground">#8D6E63</color>    <!-- Primary Progress -->
+    <color name="completed">#4CAF50</color>             <!-- Completed Green -->
+    
+    <!-- Difficulty Colors -->
+    <color name="difficulty_easy">#4CAF50</color>        <!-- Green -->
+    <color name="difficulty_medium">#FF9800</color>      <!-- Orange -->
+    <color name="difficulty_hard">#F44336</color>        <!-- Red -->
+    
+    <!-- Material3 Required Colors -->
+    <color name="on_primary">#FFFFFF</color>
+    <color name="primary_container">#EADDFF</color>
+    <color name="on_primary_container">#21005D</color>
+    <color name="secondary">#625B71</color>
+    <color name="on_secondary">#FFFFFF</color>
+    <color name="secondary_container">#E8DEF8</color>
+    <color name="on_secondary_container">#1D192B</color>
+    <color name="tertiary">#7D5260</color>
+    <color name="on_tertiary">#FFFFFF</color>
+    <color name="tertiary_container">#FFD8E4</color>
+    <color name="on_tertiary_container">#31111D</color>
+    <color name="surface">#FFFBFE</color>
+    <color name="on_surface">#1C1B1F</color>
+    <color name="surface_variant">#E7E0EC</color>
+    <color name="on_surface_variant">#49454F</color>
+    <color name="outline">#79747E</color>
+    <color name="outline_variant">#CAC4D0</color>
+    <color name="scrim">#000000</color>
+    <color name="shadow">#000000</color>
+    
+    <!-- Bottom Navigation Colors -->
+    <color name="bottom_nav_colors">#5D4037</color>
+</resources>

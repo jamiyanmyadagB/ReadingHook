@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24"
+    android:tint="@color/primary">
+    
+    <!-- Simple book icon design -->
+    <path
+        android:fillColor="@color/primary"
+        android:pathData="M12,2L12,2C17.52,2 22,6.48 22,12C22,17.52 17.52,22 12,22C6.48,22 2,17.52 2,12C2,6.48 6.48,2 12,2ZM12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4ZM12,6C15.31,6 18,8.69 18,12C18,15.31 15.31,18 12,18C8.69,18 6,15.31 6,12C6,8.69 8.69,6 12,6Z" />
+    
+    <!-- Add book spine detail -->
+    <path
+        android:fillColor="@color/primary"
+        android:pathData="M8,6L8,18L10,18L10,6Z" />
+    
+    <!-- Add book pages detail -->
+    <path
+        android:fillColor="@color/primary"
+        android:pathData="M14,6L14,18L16,18L16,6Z" />
+</vector>

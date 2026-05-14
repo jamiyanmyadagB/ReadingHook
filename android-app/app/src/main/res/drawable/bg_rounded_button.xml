@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <!-- Default state - primary color -->
+    <item android:state_enabled="true">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/primary" />
+            
+            <!-- Rounded corners for Material3 style -->
+            <corners android:radius="12dp" />
+            
+            <!-- Optional gradient for depth -->
+            <gradient
+                android:startColor="@color/primary_light"
+                android:endColor="@color/primary"
+                android:angle="90" />
+        </shape>
+    </item>
+    
+    <!-- Pressed state - darker primary -->
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/primary_dark" />
+            <corners android:radius="12dp" />
+        </shape>
+    </item>
+    
+    <!-- Disabled state - muted color -->
+    <item android:state_enabled="false">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/divider" />
+            <corners android:radius="12dp" />
+        </shape>
+    </item>
+</selector>
