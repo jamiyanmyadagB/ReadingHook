@@ -4,33 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_primary"
+    android:background="@drawable/bg_auth_gradient"
     tools:context=".ui.auth.AuthActivity">
-
-    <!-- Top decorative arc -->
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_gravity="top"
-        android:background="@drawable/bg_top_arc" />
 
     <!-- Center content container -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center"
         android:padding="32dp">
 
-        <!-- Logo -->
+        <!-- Small centered logo -->
         <ImageView
             android:id="@+id/logoImageView"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_marginBottom="32dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginBottom="24dp"
             android:src="@drawable/ic_logo"
-            android:contentDescription="@string/cd_logo" />
+            android:contentDescription="@string/cd_logo"
+            android:alpha="0.0" />
 
         <!-- App name -->
         <TextView
@@ -40,30 +33,33 @@
             android:layout_marginBottom="8dp"
             android:fontFamily="@font/playfair_display_bold"
             android:text="@string/app_name"
-            android:textColor="@color/text_on_primary"
+            android:textColor="#5D4037"
             android:textSize="32sp"
             android:letterSpacing="0.02"
-            android:gravity="center" />
+            android:gravity="center"
+            android:alpha="0.0" />
 
-        <!-- Subtitle -->
+        <!-- Elegant subtitle -->
         <TextView
             android:id="@+id/subtitleTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="48dp"
+            android:layout_marginBottom="64dp"
             android:fontFamily="@font/lato_regular"
-            android:text="@string/auth_subtitle"
-            android:textColor="@color/text_on_primary"
-            android:textSize="16sp"
-            android:letterSpacing="0.01"
-            android:gravity="center" />
+            android:text="Your smart reading companion"
+            android:textColor="#8D6E63"
+            android:textSize="14sp"
+            android:letterSpacing="0.03"
+            android:gravity="center"
+            android:alpha="0.0" />
 
         <!-- Auth buttons container -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:gravity="center">
+            android:gravity="center"
+            android:layout_marginTop="32dp">
 
             <!-- Login Button -->
             <com.google.android.material.button.MaterialButton
@@ -71,12 +67,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:layout_marginBottom="16dp"
-                android:background="@drawable/bg_rounded_button"
+                android:background="@drawable/bg_button_primary"
                 android:fontFamily="@font/lato_regular"
                 android:text="@string/auth_login_button"
-                android:textColor="@color/text_on_primary"
+                android:textColor="#FFFFFF"
                 android:textSize="16sp"
-                app:cornerRadius="12dp" />
+                android:textStyle="bold"
+                android:elevation="4dp"
+                app:cornerRadius="16dp"
+                app:rippleColor="#40FFFFFF"
+                android:alpha="0.0" />
 
             <!-- Sign Up Button -->
             <com.google.android.material.button.MaterialButton
@@ -84,28 +84,32 @@
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:layout_marginBottom="16dp"
-                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:background="@drawable/bg_button_secondary"
                 android:fontFamily="@font/lato_regular"
                 android:text="@string/auth_sign_up_button"
-                android:textColor="@color/primary"
+                android:textColor="#D4AF37"
                 android:textSize="16sp"
-                app:cornerRadius="12dp"
-                app:strokeColor="@color/primary"
-                app:strokeWidth="1dp" />
+                android:textStyle="bold"
+                android:elevation="2dp"
+                app:cornerRadius="16dp"
+                app:rippleColor="#20D4AF37"
+                android:alpha="0.0" />
 
             <!-- Guest Mode Button -->
-            <TextView
-                android:id="@+id/guestModeTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/guestModeButton"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@drawable/bg_button_guest"
                 android:fontFamily="@font/lato_regular"
                 android:text="@string/auth_guest_mode"
-                android:textColor="@color/text_hint"
-                android:textSize="14sp"
-                android:letterSpacing="0.01"
-                android:gravity="center"
-                android:background="?android:attr/selectableItemBackground"
-                android:padding="16dp" />
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:elevation="2dp"
+                app:cornerRadius="16dp"
+                app:rippleColor="#40FFFFFF"
+                android:alpha="0.0" />
 
         </LinearLayout>
 

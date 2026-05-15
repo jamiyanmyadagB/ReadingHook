@@ -4,11 +4,13 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.lifecycle.ViewModelProvider
+import com.readingnook.memoryplus.ReadingNookApplication
 import com.readingnook.memoryplus.adapter.BookAdapter
+import com.readingnook.memoryplus.viewmodel.BookViewModelFactory
 import com.readingnook.memoryplus.databinding.ActivityMainBinding
 import com.readingnook.memoryplus.ui.upload.UploadActivity
 import com.readingnook.memoryplus.viewmodel.BookViewModel
@@ -23,7 +25,7 @@ class MainActivity : AppCompatActivity() {
     
     private lateinit var binding: ActivityMainBinding
     private lateinit var bookAdapter: BookAdapter
-    private val bookViewModel: BookViewModel by viewModels()
+    private lateinit var bookViewModel: BookViewModel
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,6 +33,11 @@ class MainActivity : AppCompatActivity() {
         // Initialize view binding
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        
+        // Initialize ViewModel with repository
+        val app = application as ReadingNookApplication
+        val factory = BookViewModelFactory(app.bookRepository)
+        bookViewModel = ViewModelProvider(this, factory)[BookViewModel::class.java]
         
         // Setup UI components
         setupRecyclerView()
@@ -95,18 +102,22 @@ class MainActivity : AppCompatActivity() {
     }
     
     /**
-     * Sets up click listeners for UI interactions.
+     * Sets up click listeners for UI elements.
      */
     private fun setupClickListeners() {
-        // Profile icon click
-        binding.profileImageView.setOnClickListener {
-            // Navigate to profile activity
-            navigateToProfile()
-        }
-        
-        // Upload FAB click
+        // FAB click listener
         binding.uploadFab.setOnClickListener {
             navigateToUpload()
+        }
+        
+        // Empty state upload button click listener
+        binding.uploadEmptyButton.setOnClickListener {
+            navigateToUpload()
+        }
+        
+        // Profile icon click listener
+        binding.profileImageView.setOnClickListener {
+            navigateToProfile()
         }
     }
     
@@ -143,8 +154,8 @@ class MainActivity : AppCompatActivity() {
         // Observe books list
         bookViewModel.books.observe(this) { books ->
             bookAdapter.submitList(books)
-            updateBookCount(books.size)
             updateEmptyStateVisibility(books.isEmpty())
+            updateBookCount(books.size)
         }
         
         // Observe loading state
@@ -153,24 +164,16 @@ class MainActivity : AppCompatActivity() {
             updateLoadingState(isLoading)
         }
         
-        // Observe error messages
-        bookViewModel.errorMessage.observe(this) { errorMessage ->
-            if (errorMessage.isNotEmpty()) {
-                showError(errorMessage)
+        // Observe errors
+        bookViewModel.error.observe(this) { message ->
+            if (message.isNotEmpty()) {
+                showError(message)
             }
         }
     }
     
     /**
-     * Updates book count display.
-     */
-    private fun updateBookCount(count: Int) {
-        val countText = if (count == 1) "1 book" else "$count books"
-        binding.bookCountTextView.text = countText
-    }
-    
-    /**
-     * Updates empty state visibility.
+     * Updates empty state visibility based on book list.
      */
     private fun updateEmptyStateVisibility(isEmpty: Boolean) {
         binding.emptyStateLayout.visibility = if (isEmpty) {
@@ -187,13 +190,17 @@ class MainActivity : AppCompatActivity() {
     }
     
     /**
-     * Updates loading state UI.
+     * Updates book count badge.
+     */
+    private fun updateBookCount(count: Int) {
+        binding.bookCountTextView.text = "$count books"
+    }
+    
+    /**
+     * Updates loading state.
      */
     private fun updateLoadingState(isLoading: Boolean) {
-        // Show/hide loading indicator
-        if (isLoading) {
-            // Could add a loading indicator here
-        }
+        // Show/hide loading indicator if needed
     }
     
     /**
@@ -213,8 +220,8 @@ class MainActivity : AppCompatActivity() {
      */
     private fun navigateToReader(book: com.readingnook.memoryplus.model.Book) {
         val intent = Intent(this, com.readingnook.memoryplus.ui.reader.ReaderActivity::class.java).apply {
-            putExtra("BOOK_ID", book.id)
-            putExtra("BOOK_TITLE", book.title)
+            putExtra("BOOK", book)
+            putExtra("CURRENT_PAGE", book.lastReadPage)
         }
         startActivity(intent)
     }
@@ -223,7 +230,7 @@ class MainActivity : AppCompatActivity() {
      * Navigates to upload activity.
      */
     private fun navigateToUpload() {
-        val intent = Intent(this, UploadActivity::class.java)
+        val intent = Intent(this, com.readingnook.memoryplus.ui.upload.UploadActivity::class.java)
         startActivity(intent)
     }
     

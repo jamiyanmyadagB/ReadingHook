@@ -20,12 +20,11 @@ import android.util.Log
  * Handles book loading, searching, and state management.
  * Uses coroutines for asynchronous operations and LiveData for reactive UI updates.
  */
-class BookViewModel : ViewModel() {
+class BookViewModel(
+    private val bookRepository: BookRepository
+) : ViewModel() {
     
     private val TAG = "BookViewModel"
-    
-    // Repository for data access
-    private lateinit var bookRepository: BookRepository
     
     // LiveData for books list
     private val _books = MutableLiveData<List<Book>>()
@@ -47,12 +46,7 @@ class BookViewModel : ViewModel() {
     private val _filteredBooks = MutableStateFlow<List<Book>>(emptyList())
     val filteredBooks: StateFlow<List<Book>> = _filteredBooks.asStateFlow()
     
-    /**
-     * Initializes ViewModel with repository dependency.
-     */
-    fun init(repository: BookRepository) {
-        this.bookRepository = repository
-        
+    init {
         // Observe search query changes
         viewModelScope.launch {
             searchQuery.collect { query ->
@@ -73,23 +67,18 @@ class BookViewModel : ViewModel() {
                 
                 Log.d(TAG, "Loading books from repository")
                 
-                // Fetch books from repository (API call)
-                val booksList = withContext(Dispatchers.IO) {
-                    bookRepository.getAllBooks()
+                // Fetch books from repository (collect from Flow)
+                bookRepository.getAllBooks().collect { booksList ->
+                    _books.postValue(booksList)
+                    _filteredBooks.value = booksList
+                    Log.d(TAG, "Loaded ${booksList.size} books")
                 }
-                
-                // Update LiveData with results
-                _books.postValue(booksList)
-                _filteredBooks.value = booksList
-                
-                Log.d(TAG, "Loaded ${booksList.size} books")
                 
             } catch (e: Exception) {
                 Log.e(TAG, "Error loading books", e)
                 _errorMessage.value = "Failed to load books: ${e.message}"
                 _books.postValue(emptyList())
                 _filteredBooks.value = emptyList()
-            } finally {
                 _isLoading.value = false
             }
         }
@@ -220,10 +209,9 @@ class BookViewModel : ViewModel() {
         
         viewModelScope.launch {
             try {
-                val stats = withContext(Dispatchers.IO) {
-                    bookRepository.getReadingStats()
+                bookRepository.getReadingStats().collect { stats ->
+                    result.postValue(stats)
                 }
-                result.postValue(stats)
             } catch (e: Exception) {
                 Log.e(TAG, "Error getting reading stats", e)
                 result.postValue(ReadingStats(0, 0, 0))

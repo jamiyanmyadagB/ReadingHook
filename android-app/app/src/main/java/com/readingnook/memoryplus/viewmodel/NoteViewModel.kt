@@ -20,12 +20,11 @@ import android.util.Log
  * Handles note loading, filtering, deletion, and state management.
  * Uses coroutines for asynchronous operations and LiveData for reactive UI updates.
  */
-class NoteViewModel : ViewModel() {
+class NoteViewModel(
+    private val noteRepository: NoteRepository
+) : ViewModel() {
     
     private val TAG = "NoteViewModel"
-    
-    // Repository for data access
-    private lateinit var noteRepository: NoteRepository
     
     // LiveData for notes list
     private val _notes = MutableLiveData<List<Note>>()
@@ -50,12 +49,7 @@ class NoteViewModel : ViewModel() {
     // List for deleted notes (for undo functionality)
     private val deletedNotes = mutableListOf<Note>()
     
-    /**
-     * Initializes ViewModel with repository dependency.
-     */
-    fun init(repository: NoteRepository) {
-        this.noteRepository = repository
-        
+    init {
         // Observe filter query changes
         viewModelScope.launch {
             filterQuery.collect { query ->
@@ -76,23 +70,19 @@ class NoteViewModel : ViewModel() {
                 
                 Log.d(TAG, "Loading notes from repository")
                 
-                // Fetch notes from repository (local database)
-                val notesList = withContext(Dispatchers.IO) {
-                    noteRepository.getAllNotes()
+                // Fetch notes from repository (collect from Flow)
+                noteRepository.getAllNotes().collect { notesList ->
+                    _notes.postValue(notesList)
+                    _filteredNotes.value = notesList
+                    Log.d(TAG, "Loaded ${notesList.size} notes")
+                    _isLoading.value = false
                 }
-                
-                // Update LiveData with results
-                _notes.postValue(notesList)
-                _filteredNotes.value = notesList
-                
-                Log.d(TAG, "Loaded ${notesList.size} notes")
                 
             } catch (e: Exception) {
                 Log.e(TAG, "Error loading notes", e)
                 _errorMessage.value = "Failed to load notes: ${e.message}"
                 _notes.postValue(emptyList())
                 _filteredNotes.value = emptyList()
-            } finally {
                 _isLoading.value = false
             }
         }
@@ -200,10 +190,9 @@ class NoteViewModel : ViewModel() {
         
         viewModelScope.launch {
             try {
-                val notes = withContext(Dispatchers.IO) {
-                    noteRepository.getNotesByBookId(bookId)
+                noteRepository.getNotesByBookId(bookId).collect { notes ->
+                    result.postValue(notes)
                 }
-                result.postValue(notes)
             } catch (e: Exception) {
                 Log.e(TAG, "Error getting notes by book ID: $bookId", e)
                 result.postValue(emptyList())
@@ -221,10 +210,9 @@ class NoteViewModel : ViewModel() {
         
         viewModelScope.launch {
             try {
-                val notes = withContext(Dispatchers.IO) {
-                    noteRepository.getFavoriteNotes()
+                noteRepository.getFavoriteNotes().collect { notes ->
+                    result.postValue(notes)
                 }
-                result.postValue(notes)
             } catch (e: Exception) {
                 Log.e(TAG, "Error getting favorite notes", e)
                 result.postValue(emptyList())
@@ -264,10 +252,9 @@ class NoteViewModel : ViewModel() {
         
         viewModelScope.launch {
             try {
-                val notes = withContext(Dispatchers.IO) {
-                    noteRepository.getNotesNeedingReview()
+                noteRepository.getNotesNeedingReview().collect { notes ->
+                    result.postValue(notes)
                 }
-                result.postValue(notes)
             } catch (e: Exception) {
                 Log.e(TAG, "Error getting notes needing review", e)
                 result.postValue(emptyList())
@@ -285,10 +272,9 @@ class NoteViewModel : ViewModel() {
         
         viewModelScope.launch {
             try {
-                val stats = withContext(Dispatchers.IO) {
-                    noteRepository.getNoteStats()
+                noteRepository.getNoteStats().collect { stats ->
+                    result.postValue(stats)
                 }
-                result.postValue(stats)
             } catch (e: Exception) {
                 Log.e(TAG, "Error getting note stats", e)
                 result.postValue(NoteStats(0, 0, 0, 0, 0))

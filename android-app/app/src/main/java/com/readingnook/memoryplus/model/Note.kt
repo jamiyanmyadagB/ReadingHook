@@ -1,5 +1,7 @@
 package com.readingnook.memoryplus.model
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import org.json.JSONObject
 
 /**
@@ -8,7 +10,9 @@ import org.json.JSONObject
  * Contains word selections, translations, and explanations.
  * Designed for efficient vocabulary building and review.
  */
+@Entity(tableName = "notes")
 data class Note(
+    @PrimaryKey
     val id: String = "",
     val bookId: String = "",
     val selectedWord: String = "",

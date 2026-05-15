@@ -63,24 +63,15 @@ class BookAdapter : ListAdapter<Book, BookAdapter.BookViewHolder>(BookDiffCallba
         private fun setupDifficultyChip(difficulty: String) {
             binding.difficultyChip.text = difficulty
             
-            val (backgroundColor, textColor) = when (difficulty.lowercase()) {
-                "easy" -> Pair(binding.root.context.getColor(com.readingnook.memoryplus.R.color.difficulty_easy),
-                              binding.root.context.getColor(com.readingnook.memoryplus.R.color.text_on_primary))
-                "medium" -> Pair(binding.root.context.getColor(com.readingnook.memoryplus.R.color.difficulty_medium),
-                                binding.root.context.getColor(com.readingnook.memoryplus.R.color.text_on_primary))
-                "hard" -> Pair(binding.root.context.getColor(com.readingnook.memoryplus.R.color.difficulty_hard),
-                              binding.root.context.getColor(com.readingnook.memoryplus.R.color.text_on_primary))
-                else -> Pair(binding.root.context.getColor(com.readingnook.memoryplus.R.color.primary),
-                             binding.root.context.getColor(com.readingnook.memoryplus.R.color.text_on_primary))
+            val chipColor = when (difficulty.lowercase()) {
+                "easy" -> "#90EE90" // Light green
+                "medium" -> "#FFD700" // Gold
+                "hard" -> "#FF6B6B" // Light red
+                else -> "#D4A373" // Gold accent
             }
             
             binding.difficultyChip.setChipBackgroundColorResource(
-                when (difficulty.lowercase()) {
-                    "easy" -> com.readingnook.memoryplus.R.color.difficulty_easy
-                    "medium" -> com.readingnook.memoryplus.R.color.difficulty_medium
-                    "hard" -> com.readingnook.memoryplus.R.color.difficulty_hard
-                    else -> com.readingnook.memoryplus.R.color.primary
-                }
+                android.graphics.Color.parseColor(chipColor)
             )
         }
         
@@ -110,14 +101,14 @@ class BookAdapter : ListAdapter<Book, BookAdapter.BookViewHolder>(BookDiffCallba
         
         private fun setupSpineColor(difficulty: String) {
             val spineColor = when (difficulty.lowercase()) {
-                "easy" -> com.readingnook.memoryplus.R.color.difficulty_easy
-                "medium" -> com.readingnook.memoryplus.R.color.difficulty_medium
-                "hard" -> com.readingnook.memoryplus.R.color.difficulty_hard
-                else -> com.readingnook.memoryplus.R.color.primary
+                "easy" -> "#90EE90" // Light green
+                "medium" -> "#FFD700" // Gold
+                "hard" -> "#FF6B6B" // Light red
+                else -> "#D4A373" // Gold accent
             }
             
             binding.spineView.setBackgroundColor(
-                binding.root.context.getColor(spineColor)
+                android.graphics.Color.parseColor(spineColor)
             )
         }
     }

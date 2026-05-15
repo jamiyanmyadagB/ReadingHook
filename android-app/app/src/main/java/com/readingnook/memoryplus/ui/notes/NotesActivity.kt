@@ -1,28 +1,27 @@
 package com.readingnook.memoryplus.ui.notes
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.activity.viewModels
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.snackbar.Snackbar
+import com.readingnook.memoryplus.ReadingNookApplication
 import com.readingnook.memoryplus.adapter.NoteAdapter
 import com.readingnook.memoryplus.databinding.ActivityNotesBinding
+import com.readingnook.memoryplus.viewmodel.NoteViewModelFactory
 import com.readingnook.memoryplus.viewmodel.NoteViewModel
 
 /**
- * Notes activity for displaying and managing vocabulary notes.
+ * Notes activity for displaying and managing reading notes.
  * 
- * Features expandable note cards, difficulty filtering, and swipe-to-delete.
+ * Shows user's notes with filtering options and navigation.
  * Implements MVVM pattern with NoteViewModel.
  */
 class NotesActivity : AppCompatActivity() {
     
     private lateinit var binding: ActivityNotesBinding
     private lateinit var noteAdapter: NoteAdapter
-    private val noteViewModel: NoteViewModel by viewModels()
-    
-    private var currentFilter = "all"
+    private lateinit var noteViewModel: NoteViewModel
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,11 +30,16 @@ class NotesActivity : AppCompatActivity() {
         binding = ActivityNotesBinding.inflate(layoutInflater)
         setContentView(binding.root)
         
+        // Initialize ViewModel with repository
+        val app = application as ReadingNookApplication
+        val factory = NoteViewModelFactory(app.noteRepository)
+        noteViewModel = ViewModelProvider(this, factory)[NoteViewModel::class.java]
+        
         // Setup UI components
         setupRecyclerView()
-        setupFilterChips()
         setupClickListeners()
         setupBottomNavigation()
+        setupFilterChips()
         
         // Observe ViewModel data
         observeViewModel()
@@ -45,7 +49,7 @@ class NotesActivity : AppCompatActivity() {
     }
     
     /**
-     * Sets up RecyclerView with expandable adapter.
+     * Sets up RecyclerView with adapter.
      */
     private fun setupRecyclerView() {
         noteAdapter = NoteAdapter()
@@ -53,109 +57,13 @@ class NotesActivity : AppCompatActivity() {
         binding.notesRecyclerView.apply {
             layoutManager = LinearLayoutManager(this@NotesActivity)
             adapter = noteAdapter
-            
-            // Add swipe-to-delete functionality
-            setupSwipeToDelete()
         }
         
         // Set note click listener
         noteAdapter.setOnNoteClickListener { note ->
-            // Handle note click (could open detail view)
-            showNoteDetails(note)
+            // Handle note click
+            navigateToReader(note)
         }
-    }
-    
-    /**
-     * Sets up swipe-to-delete functionality.
-     */
-    private fun setupSwipeToDelete() {
-        val swipeCallback = object : androidx.recyclerview.widget.ItemTouchHelper.SimpleCallback(
-            0,
-            androidx.recyclerview.widget.ItemTouchHelper.LEFT
-        ) {
-            override fun onMove(
-                recyclerView: RecyclerView,
-                viewHolder: RecyclerView.ViewHolder,
-                target: RecyclerView.ViewHolder
-            ): Boolean = false
-            
-            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
-                val position = viewHolder.bindingAdapterPosition
-                val note = noteAdapter.getNoteAt(position)
-                
-                note?.let {
-                    deleteNote(it)
-                }
-            }
-            
-            override fun getSwipeThreshold(viewHolder: RecyclerView.ViewHolder): Float {
-                return 0.5f
-            }
-        }
-        
-        val itemTouchHelper = androidx.recyclerview.widget.ItemTouchHelper(swipeCallback)
-        itemTouchHelper.attachToRecyclerView(binding.notesRecyclerView)
-    }
-    
-    /**
-     * Sets up filter chips for difficulty filtering.
-     */
-    private fun setupFilterChips() {
-        // All chip
-        binding.allChip.setOnClickListener {
-            selectFilterChip("all")
-            noteViewModel.filterNotes("all")
-        }
-        
-        // Easy chip
-        binding.easyChip.setOnClickListener {
-            selectFilterChip("easy")
-            noteViewModel.filterNotes("easy")
-        }
-        
-        // Medium chip
-        binding.mediumChip.setOnClickListener {
-            selectFilterChip("medium")
-            noteViewModel.filterNotes("medium")
-        }
-        
-        // Hard chip
-        binding.hardChip.setOnClickListener {
-            selectFilterChip("hard")
-            noteViewModel.filterNotes("hard")
-        }
-        
-        // Select "All" by default
-        selectFilterChip("all")
-    }
-    
-    /**
-     * Selects a filter chip and updates UI.
-     */
-    private fun selectFilterChip(filter: String) {
-        currentFilter = filter
-        
-        // Reset all chips to unselected state
-        listOf(binding.allChip, binding.easyChip, binding.mediumChip, binding.hardChip)
-            .forEach { chip ->
-                chip.setChipBackgroundColorResource(com.readingnook.memoryplus.R.color.background_card)
-                chip.setTextColor(getColor(com.readingnook.memoryplus.R.color.text_primary))
-                chip.chipStrokeColorResource = com.readingnook.memoryplus.R.color.divider
-                chip.chipStrokeWidth = 1
-            }
-        
-        // Highlight selected chip
-        val selectedChip = when (filter) {
-            "all" -> binding.allChip
-            "easy" -> binding.easyChip
-            "medium" -> binding.mediumChip
-            "hard" -> binding.hardChip
-            else -> binding.allChip
-        }
-        
-        selectedChip.setChipBackgroundColorResource(com.readingnook.memoryplus.R.color.primary)
-        selectedChip.setTextColor(getColor(com.readingnook.memoryplus.R.color.text_on_primary))
-        selectedChip.chipStrokeWidth = 0
     }
     
     /**
@@ -184,7 +92,8 @@ class NotesActivity : AppCompatActivity() {
                     true
                 }
                 com.readingnook.memoryplus.R.id.nav_profile -> {
-                    // Navigate to profile
+                    // Navigate to profile (placeholder)
+                    android.widget.Toast.makeText(this, "Profile coming soon!", android.widget.Toast.LENGTH_SHORT).show()
                     true
                 }
                 else -> false

@@ -1,5 +1,7 @@
 package com.readingnook.memoryplus.model
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import org.json.JSONObject
 
 /**
@@ -8,7 +10,9 @@ import org.json.JSONObject
  * Contains metadata and page content for translated books.
  * Designed for efficient serialization and Room database compatibility.
  */
+@Entity(tableName = "books")
 data class Book(
+    @PrimaryKey
     val id: String = "",
     val title: String = "",
     val originalLanguage: String = "",
@@ -18,7 +22,8 @@ data class Book(
     val createdAt: String = "",
     val pageCount: Int = 0,
     val isDownloaded: Boolean = false,
-    val lastReadPage: Int = 0
+    val lastReadPage: Int = 0,
+    val isCompleted: Boolean = false
 ) {
     
     companion object {

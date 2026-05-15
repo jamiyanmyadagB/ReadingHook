@@ -289,9 +289,7 @@ class ReaderActivity : AppCompatActivity() {
                 translatedText = "", // Would be filled by API
                 hinglishExplanation = "", // Would be filled by API
                 difficulty = book.difficulty,
-                createdAt = java.util.Date().toString(),
-                context = page.originalText,
-                pageNumber = currentPageIndex + 1
+                createdAt = java.util.Date().toString()
             )
             
             // Save note (would use ViewModel/Repository)

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_primary"
+    android:background="#FFF8F5"
     tools:context=".ui.notes.NotesActivity">
 
     <!-- Main content container -->
@@ -21,7 +21,7 @@
             android:orientation="horizontal"
             android:gravity="center_vertical"
             android:padding="16dp"
-            android:background="@color/background_card"
+            android:background="#FFFFFF"
             android:elevation="4dp">
 
             <!-- Title -->
@@ -31,7 +31,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/playfair_display_bold"
                 android:text="@string/notes_title"
-                android:textColor="@color/text_primary"
+                android:textColor="#4B2E2E"
                 android:textSize="24sp"
                 android:letterSpacing="0.02" />
 
@@ -43,7 +43,8 @@
                 android:src="@drawable/ic_filter"
                 android:background="?android:attr/selectableItemBackground"
                 android:padding="4dp"
-                android:contentDescription="@string/cd_filter" />
+                android:contentDescription="@string/cd_filter"
+                android:tint="#8D6E63" />
 
         </LinearLayout>
 
@@ -69,10 +70,10 @@
                     android:layout_marginEnd="8dp"
                     android:fontFamily="@font/lato_regular"
                     android:text="@string/notes_filter_all"
-                    android:textColor="@color/text_on_primary"
+                    android:textColor="#FFFFFF"
                     app:chipCornerRadius="16dp"
                     app:chipMinHeight="32dp"
-                    app:chipBackgroundColor="@color/primary" />
+                    app:chipBackgroundColor="#D4A373" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/easyChip"
@@ -81,11 +82,11 @@
                     android:layout_marginEnd="8dp"
                     android:fontFamily="@font/lato_regular"
                     android:text="@string/notes_filter_difficulty"
-                    android:textColor="@color/text_primary"
+                    android:textColor="#4B2E2E"
                     app:chipCornerRadius="16dp"
                     app:chipMinHeight="32dp"
-                    app:chipBackgroundColor="@color/background_card"
-                    app:chipStrokeColor="@color/divider"
+                    app:chipBackgroundColor="#FFFFFF"
+                    app:chipStrokeColor="#D4A373"
                     app:chipStrokeWidth="1dp" />
 
                 <com.google.android.material.chip.Chip
@@ -95,11 +96,11 @@
                     android:layout_marginEnd="8dp"
                     android:fontFamily="@font/lato_regular"
                     android:text="Medium"
-                    android:textColor="@color/text_primary"
+                    android:textColor="#4B2E2E"
                     app:chipCornerRadius="16dp"
                     app:chipMinHeight="32dp"
-                    app:chipBackgroundColor="@color/background_card"
-                    app:chipStrokeColor="@color/divider"
+                    app:chipBackgroundColor="#FFFFFF"
+                    app:chipStrokeColor="#D4A373"
                     app:chipStrokeWidth="1dp" />
 
                 <com.google.android.material.chip.Chip
@@ -109,11 +110,11 @@
                     android:layout_marginEnd="8dp"
                     android:fontFamily="@font/lato_regular"
                     android:text="Hard"
-                    android:textColor="@color/text_primary"
+                    android:textColor="#4B2E2E"
                     app:chipCornerRadius="16dp"
                     app:chipMinHeight="32dp"
-                    app:chipBackgroundColor="@color/background_card"
-                    app:chipStrokeColor="@color/divider"
+                    app:chipBackgroundColor="#FFFFFF"
+                    app:chipStrokeColor="#D4A373"
                     app:chipStrokeWidth="1dp" />
 
             </LinearLayout>
@@ -156,7 +157,7 @@
                 android:layout_marginTop="24dp"
                 android:fontFamily="@font/playfair_display_bold"
                 android:text="@string/notes_empty_title"
-                android:textColor="@color/text_secondary"
+                android:textColor="#8D6E63"
                 android:textSize="20sp"
                 android:gravity="center" />
 
@@ -166,7 +167,7 @@
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/lato_regular"
                 android:text="@string/notes_empty_message"
-                android:textColor="@color/text_hint"
+                android:textColor="#8D6E63"
                 android:textSize="14sp"
                 android:gravity="center"
                 android:lineSpacingExtra="4dp" />
@@ -181,10 +182,10 @@
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_gravity="bottom"
-        android:background="@color/background_card"
+        android:background="#FFFFFF"
         app:menu="@menu/bottom_navigation_menu"
         app:itemIconTint="@color/bottom_nav_colors"
         app:itemTextColor="@color/bottom_nav_colors"
-        app:itemRippleColor="@color/ripple" />
+        app:itemRippleColor="#20D4A373" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

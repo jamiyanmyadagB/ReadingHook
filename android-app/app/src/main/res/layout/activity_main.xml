@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_primary"
+    android:background="#FFF8F5"
     tools:context=".ui.main.MainActivity">
 
     <!-- Main content container -->
@@ -41,7 +41,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/playfair_display_bold"
                         android:text="Good morning, Reader"
-                        android:textColor="@color/text_primary"
+                        android:textColor="#4B2E2E"
                         android:textSize="24sp"
                         android:letterSpacing="0.02" />
 
@@ -50,7 +50,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/lato_regular"
                         android:text="Ready to continue reading?"
-                        android:textColor="@color/text_secondary"
+                        android:textColor="#8D6E63"
                         android:textSize="14sp" />
 
                 </LinearLayout>
@@ -72,22 +72,26 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="24dp"
-                app:boxBackgroundColor="@color/background_card"
-                app:boxStrokeColor="@color/divider"
+                app:boxBackgroundColor="#FFFFFF"
+                app:boxStrokeColor="#D4A373"
                 app:boxStrokeWidth="1dp"
-                app:hintTextColor="@color/text_hint"
+                app:hintTextColor="#8D6E63"
                 app:startIconDrawable="@drawable/ic_search"
-                app:startIconTint="@color/text_hint">
+                app:startIconTint="#8D6E63"
+                app:boxCornerRadiusBottomEnd="16dp"
+                app:boxCornerRadiusBottomStart="16dp"
+                app:boxCornerRadiusTopEnd="16dp"
+                app:boxCornerRadiusTopStart="16dp"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/searchEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/bg_input_field"
                     android:fontFamily="@font/lato_regular"
                     android:hint="@string/bookshelf_search_hint"
                     android:inputType="text"
-                    android:textColor="@color/text_primary"
+                    android:textColor="#4B2E2E"
                     android:textSize="16sp"
                     android:padding="16dp" />
 
@@ -107,7 +111,7 @@
                     android:layout_weight="1"
                     android:fontFamily="@font/playfair_display_bold"
                     android:text="@string/bookshelf_title"
-                    android:textColor="@color/text_primary"
+                    android:textColor="#4B2E2E"
                     android:textSize="20sp"
                     android:letterSpacing="0.02" />
 
@@ -117,8 +121,8 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/lato_regular"
                     android:text="0 books"
-                    android:textColor="@color/text_secondary"
-                    android:textSize="14sp"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp"
                     android:background="@drawable/bg_circle_accent"
                     android:paddingHorizontal="12dp"
                     android:paddingVertical="4dp" />
@@ -158,7 +162,7 @@
                     android:layout_marginTop="24dp"
                     android:fontFamily="@font/playfair_display_bold"
                     android:text="@string/bookshelf_empty_title"
-                    android:textColor="@color/text_secondary"
+                    android:textColor="#8D6E63"
                     android:textSize="20sp"
                     android:gravity="center" />
 
@@ -168,10 +172,25 @@
                     android:layout_marginTop="8dp"
                     android:fontFamily="@font/lato_regular"
                     android:text="@string/bookshelf_empty_message"
-                    android:textColor="@color/text_hint"
+                    android:textColor="#8D6E63"
                     android:textSize="14sp"
                     android:gravity="center"
                     android:lineSpacingExtra="4dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/uploadEmptyButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/bg_button_primary"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="Upload Your First Book"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:elevation="4dp"
+                    app:cornerRadius="16dp"
+                    app:rippleColor="#40FFFFFF" />
 
             </LinearLayout>
 
@@ -188,8 +207,9 @@
         android:layout_margin="16dp"
         android:src="@drawable/ic_add"
         android:contentDescription="@string/cd_upload_book"
-        app:tint="@color/text_on_primary"
-        app:backgroundTint="@color/primary" />
+        app:tint="#FFFFFF"
+        app:backgroundTint="#D4A373"
+        app:tintMode="src_atop" />
 
     <!-- Bottom Navigation -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -197,10 +217,10 @@
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_gravity="bottom"
-        android:background="@color/background_card"
+        android:background="#FFFFFF"
         app:menu="@menu/bottom_navigation_menu"
         app:itemIconTint="@color/bottom_nav_colors"
         app:itemTextColor="@color/bottom_nav_colors"
-        app:itemRippleColor="@color/ripple" />
+        app:itemRippleColor="#20D4A373" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

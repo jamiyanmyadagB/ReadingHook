@@ -1,13 +1,13 @@
-D:\6th semester\Android\ReadingHookProject\backend\src\main\java\com\readingnook\config\DatabaseConfig.java
-D:\6th semester\Android\ReadingHookProject\backend\src\main\java\com\readingnook\config\DotenvPropertySource.java
-D:\6th semester\Android\ReadingHookProject\backend\src\main\java\com\readingnook\controller\BookController.java
-D:\6th semester\Android\ReadingHookProject\backend\src\main\java\com\readingnook\controller\NoteController.java
-D:\6th semester\Android\ReadingHookProject\backend\src\main\java\com\readingnook\model\Book.java
-D:\6th semester\Android\ReadingHookProject\backend\src\main\java\com\readingnook\model\Note.java
-D:\6th semester\Android\ReadingHookProject\backend\src\main\java\com\readingnook\model\Page.java
-D:\6th semester\Android\ReadingHookProject\backend\src\main\java\com\readingnook\ReadingNookApplication.java
-D:\6th semester\Android\ReadingHookProject\backend\src\main\java\com\readingnook\repository\BookRepository.java
-D:\6th semester\Android\ReadingHookProject\backend\src\main\java\com\readingnook\repository\NoteRepository.java
-D:\6th semester\Android\ReadingHookProject\backend\src\main\java\com\readingnook\service\LangDetectService.java
-D:\6th semester\Android\ReadingHookProject\backend\src\main\java\com\readingnook\service\PdfService.java
-D:\6th semester\Android\ReadingHookProject\backend\src\main\java\com\readingnook\service\TranslateService.java
+d:\AndroidProjects\ReadingHookProject\backend\src\main\java\com\readingnook\config\DatabaseConfig.java
+d:\AndroidProjects\ReadingHookProject\backend\src\main\java\com\readingnook\config\DotenvPropertySource.java
+d:\AndroidProjects\ReadingHookProject\backend\src\main\java\com\readingnook\controller\BookController.java
+d:\AndroidProjects\ReadingHookProject\backend\src\main\java\com\readingnook\controller\NoteController.java
+d:\AndroidProjects\ReadingHookProject\backend\src\main\java\com\readingnook\model\Book.java
+d:\AndroidProjects\ReadingHookProject\backend\src\main\java\com\readingnook\model\Note.java
+d:\AndroidProjects\ReadingHookProject\backend\src\main\java\com\readingnook\model\Page.java
+d:\AndroidProjects\ReadingHookProject\backend\src\main\java\com\readingnook\ReadingNookApplication.java
+d:\AndroidProjects\ReadingHookProject\backend\src\main\java\com\readingnook\repository\BookRepository.java
+d:\AndroidProjects\ReadingHookProject\backend\src\main\java\com\readingnook\repository\NoteRepository.java
+d:\AndroidProjects\ReadingHookProject\backend\src\main\java\com\readingnook\service\LangDetectService.java
+d:\AndroidProjects\ReadingHookProject\backend\src\main\java\com\readingnook\service\PdfService.java
+d:\AndroidProjects\ReadingHookProject\backend\src\main\java\com\readingnook\service\TranslateService.java

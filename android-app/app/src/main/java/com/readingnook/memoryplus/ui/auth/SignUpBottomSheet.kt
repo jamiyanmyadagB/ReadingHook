@@ -98,6 +98,8 @@ class SignUpBottomSheet : BottomSheetDialogFragment() {
             if (validateInputs(name, email, password, confirmPassword)) {
                 onSignUpClickListener?.invoke(name, email, password)
                 dismiss()
+                // Navigate to MainActivity after successful sign-up
+                navigateToMain()
             }
         }
         
@@ -105,6 +107,15 @@ class SignUpBottomSheet : BottomSheetDialogFragment() {
         binding.closeButton.setOnClickListener {
             dismiss()
         }
+    }
+    
+    /**
+     * Navigates to MainActivity after successful sign-up.
+     */
+    private fun navigateToMain() {
+        val intent = android.content.Intent(requireContext(), com.readingnook.memoryplus.ui.main.MainActivity::class.java)
+        startActivity(intent)
+        requireActivity().finish()
     }
     
     /**
