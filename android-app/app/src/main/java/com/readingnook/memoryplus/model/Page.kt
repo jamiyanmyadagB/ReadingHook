@@ -19,24 +19,6 @@ data class Page(
     val readingTime: Long = 0L // Time in milliseconds
 ) : Parcelable {
     
-    companion object {
-        /**
-         * Creates Page from JSON object.
-         * 
-         * @param json JSON object containing page data
-         * @return Page object
-         */
-        fun fromJson(json: JSONObject): Page {
-            return Page(
-                pageNumber = json.optInt("pageNumber", 0),
-                originalText = json.optString("originalText", ""),
-                translatedText = json.optString("translatedText", ""),
-                isBookmarked = false,
-                readingTime = 0L
-            )
-        }
-    }
-    
     /**
      * Gets the text to display based on user preference.
      * 
@@ -83,6 +65,22 @@ data class Page(
     }
     
     companion object CREATOR : Parcelable.Creator<Page> {
+        /**
+         * Creates Page from JSON object.
+         * 
+         * @param json JSON object containing page data
+         * @return Page object
+         */
+        fun fromJson(json: JSONObject): Page {
+            return Page(
+                pageNumber = json.optInt("pageNumber", 0),
+                originalText = json.optString("originalText", ""),
+                translatedText = json.optString("translatedText", ""),
+                isBookmarked = false,
+                readingTime = 0L
+            )
+        }
+        
         override fun createFromParcel(parcel: Parcel): Page {
             return Page(parcel)
         }

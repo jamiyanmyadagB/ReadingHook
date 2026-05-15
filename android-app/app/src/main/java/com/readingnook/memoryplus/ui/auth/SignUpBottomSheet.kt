@@ -96,7 +96,7 @@ class SignUpBottomSheet : BottomSheetDialogFragment() {
             val confirmPassword = binding.confirmPasswordEditText.text.toString()
             
             if (validateInputs(name, email, password, confirmPassword)) {
-                onSignUpClickListener?.invoke(name, email, password)
+                onSignUpClickListener?.invoke(name, email, password, confirmPassword)
                 dismiss()
                 // Navigate to MainActivity after successful sign-up
                 navigateToMain()

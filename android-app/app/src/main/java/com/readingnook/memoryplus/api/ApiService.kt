@@ -2,6 +2,8 @@ package com.readingnook.memoryplus.api
 
 import com.readingnook.memoryplus.model.Book
 import com.readingnook.memoryplus.model.Note
+import okhttp3.MediaType.Companion.toMediaType
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.OkHttpClient
 import okhttp3.Request
@@ -13,12 +15,12 @@ import java.util.concurrent.TimeUnit
 
 /**
  * API service for communicating with ReadingNook backend.
- * 
+ *
  * Handles all HTTP requests including file uploads and data synchronization.
  * Uses OkHttp3 for networking and coroutines for async operations.
  */
 class ApiService {
-    
+
     private val client = OkHttpClient.Builder()
         .addInterceptor(HttpLoggingInterceptor().apply {
             level = HttpLoggingInterceptor.Level.BODY
@@ -27,28 +29,32 @@ class ApiService {
         .readTimeout(30, TimeUnit.SECONDS)
         .writeTimeout(30, TimeUnit.SECONDS)
         .build()
-    
+
     private val baseUrl = "http://10.0.2.2:8080/api" // Replace with actual backend URL
-    
+    override fun equals(other: Any?): Boolean {
+        return super.equals(other)
+    }
+
     /**
      * Uploads a PDF file to the backend for processing.
-     * 
+     *
      * @param file PDF file to upload
      * @return Book object with translated content
      */
     suspend fun uploadBook(file: File): Result<Book> {
         return try {
+            val mediaType = "application/json".toMediaTypeOrNull()
             val requestBody = MultipartBody.Builder()
                 .setType(MultipartBody.FORM)
-                .addFormDataPart("file", file.name, 
-                    RequestBody.create(file.toMediaType(), file))
+                .addFormDataPart("file", file.name,
+                    RequestBody.create(mediaType, file))
                 .build()
-            
+
             val request = Request.Builder()
                 .url("$baseUrl/books/upload")
                 .post(requestBody)
                 .build()
-            
+
             client.newCall(request).execute().use { response ->
                 if (response.isSuccessful) {
                     val responseBody = response.body?.string()
@@ -67,10 +73,10 @@ class ApiService {
             Result.failure(e)
         }
     }
-    
+
     /**
      * Retrieves all books metadata from the backend.
-     * 
+     *
      * @return List of books without page content
      */
     suspend fun getAllBooks(): Result<List<Book>> {
@@ -79,7 +85,7 @@ class ApiService {
                 .url("$baseUrl/books/")
                 .get()
                 .build()
-            
+
             client.newCall(request).execute().use { response ->
                 if (response.isSuccessful) {
                     val responseBody = response.body?.string()
@@ -87,12 +93,12 @@ class ApiService {
                         // Parse JSON array to Book list
                         val booksArray = org.json.JSONArray(responseBody)
                         val books = mutableListOf<Book>()
-                        
+
                         for (i in 0 until booksArray.length()) {
                             val bookJson = booksArray.getJSONObject(i)
                             books.add(Book.fromMetadata(bookJson))
                         }
-                        
+
                         Result.success(books)
                     } else {
                         Result.failure(Exception("Empty response from server"))
@@ -105,10 +111,10 @@ class ApiService {
             Result.failure(e)
         }
     }
-    
+
     /**
      * Retrieves a specific book with full content.
-     * 
+     *
      * @param bookId ID of the book to retrieve
      * @return Complete book with all pages
      */
@@ -118,7 +124,7 @@ class ApiService {
                 .url("$baseUrl/books/$bookId")
                 .get()
                 .build()
-            
+
             client.newCall(request).execute().use { response ->
                 if (response.isSuccessful) {
                     val responseBody = response.body?.string()
@@ -136,10 +142,10 @@ class ApiService {
             Result.failure(e)
         }
     }
-    
+
     /**
      * Creates a new note for a book.
-     * 
+     *
      * @param note Note object to create
      * @return Created note with generated ID
      */
@@ -147,15 +153,15 @@ class ApiService {
         return try {
             val json = note.toJson()
             val requestBody = RequestBody.create(
-                "application/json".toMediaType(), 
+                "application/json".toMediaType(),
                 json
             )
-            
+
             val request = Request.Builder()
                 .url("$baseUrl/notes/")
                 .post(requestBody)
                 .build()
-            
+
             client.newCall(request).execute().use { response ->
                 if (response.isSuccessful) {
                     val responseBody = response.body?.string()
@@ -173,10 +179,10 @@ class ApiService {
             Result.failure(e)
         }
     }
-    
+
     /**
      * Retrieves all notes for a specific book.
-     * 
+     *
      * @param bookId ID of the book
      * @return List of notes sorted by creation date
      */
@@ -186,19 +192,19 @@ class ApiService {
                 .url("$baseUrl/notes/$bookId")
                 .get()
                 .build()
-            
+
             client.newCall(request).execute().use { response ->
                 if (response.isSuccessful) {
                     val responseBody = response.body?.string()
                     if (responseBody != null) {
                         val notesArray = org.json.JSONArray(responseBody)
                         val notes = mutableListOf<Note>()
-                        
+
                         for (i in 0 until notesArray.length()) {
                             val noteJson = notesArray.getJSONObject(i)
                             notes.add(Note.fromJson(noteJson))
                         }
-                        
+
                         Result.success(notes)
                     } else {
                         Result.failure(Exception("Empty response from server"))
@@ -211,10 +217,10 @@ class ApiService {
             Result.failure(e)
         }
     }
-    
+
     /**
      * Updates an existing note.
-     * 
+     *
      * @param noteId ID of the note to update
      * @param note Updated note data
      * @return Updated note
@@ -223,15 +229,15 @@ class ApiService {
         return try {
             val json = note.toJson()
             val requestBody = RequestBody.create(
-                "application/json".toMediaType(), 
+                "application/json".toMediaType(),
                 json
             )
-            
+
             val request = Request.Builder()
                 .url("$baseUrl/notes/note/$noteId")
                 .put(requestBody)
                 .build()
-            
+
             client.newCall(request).execute().use { response ->
                 if (response.isSuccessful) {
                     val responseBody = response.body?.string()
@@ -249,10 +255,10 @@ class ApiService {
             Result.failure(e)
         }
     }
-    
+
     /**
      * Deletes a specific note.
-     * 
+     *
      * @param noteId ID of the note to delete
      * @return Success/failure result
      */
@@ -262,7 +268,7 @@ class ApiService {
                 .url("$baseUrl/notes/note/$noteId")
                 .delete()
                 .build()
-            
+
             client.newCall(request).execute().use { response ->
                 if (response.isSuccessful) {
                     Result.success(Unit)
@@ -275,9 +281,3 @@ class ApiService {
         }
     }
 }
-
-/**
- * Extension function to convert File to MediaType.
- */
-private fun File.toMediaType() = okhttp3.MediaType.parse("application/pdf") ?: 
-    okhttp3.MediaType.parse("application/octet-stream")

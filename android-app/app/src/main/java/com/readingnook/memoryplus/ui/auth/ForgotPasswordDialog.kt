@@ -68,7 +68,7 @@ class ForgotPasswordDialog : androidx.fragment.app.DialogFragment() {
         binding.sendButton.setOnClickListener {
             val email = binding.emailEditText.text.toString().trim()
             
-            if (validateEmail(email)) {
+            if (isValidEmail(email)) {
                 onSendClickListener?.invoke(email)
                 dismiss()
             }

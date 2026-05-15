@@ -88,7 +88,7 @@ class NoteAdapter : ListAdapter<Note, NoteAdapter.NoteViewHolder>(NoteDiffCallba
             }
             
             // Set content text
-            binding.originalSentenceTextView.text = note.context
+            binding.originalSentenceTextView.text = note.originalText
             binding.translatedSentenceTextView.text = note.translatedText
         }
         

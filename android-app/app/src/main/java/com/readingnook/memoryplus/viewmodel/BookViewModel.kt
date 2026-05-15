@@ -204,8 +204,8 @@ class BookViewModel(
     /**
      * Gets reading statistics.
      */
-    fun getReadingStats(): LiveData<ReadingStats> {
-        val result = MutableLiveData<ReadingStats>()
+    fun getReadingStats(): LiveData<com.readingnook.memoryplus.repository.BookRepository.ReadingStats> {
+        val result = MutableLiveData<com.readingnook.memoryplus.repository.BookRepository.ReadingStats>()
         
         viewModelScope.launch {
             try {
@@ -214,21 +214,12 @@ class BookViewModel(
                 }
             } catch (e: Exception) {
                 Log.e(TAG, "Error getting reading stats", e)
-                result.postValue(ReadingStats(0, 0, 0))
+                result.postValue(com.readingnook.memoryplus.repository.BookRepository.ReadingStats(0, 0, 0))
             }
         }
         
         return result
     }
-    
-    /**
-     * Data class for reading statistics.
-     */
-    data class ReadingStats(
-        val totalBooks: Int,
-        val completedBooks: Int,
-        val totalPagesRead: Int
-    )
     
     override fun onCleared() {
         super.onCleared()

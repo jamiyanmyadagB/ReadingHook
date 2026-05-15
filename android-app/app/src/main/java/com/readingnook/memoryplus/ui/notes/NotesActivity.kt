@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.snackbar.Snackbar
 import com.readingnook.memoryplus.ReadingNookApplication
 import com.readingnook.memoryplus.adapter.NoteAdapter
 import com.readingnook.memoryplus.databinding.ActivityNotesBinding
@@ -75,6 +76,25 @@ class NotesActivity : AppCompatActivity() {
             // Show filter options dialog
             showFilterDialog()
         }
+    }
+    
+    /**
+     * Sets up filter chips.
+     */
+    private fun setupFilterChips() {
+        // Initialize filter chips if they exist in the layout
+        // For now, this is a placeholder
+    }
+    
+    /**
+     * Navigates to reader for the note's book.
+     */
+    private fun navigateToReader(note: com.readingnook.memoryplus.model.Note) {
+        // Navigate to reader activity for the book containing this note
+        val intent = Intent(this, com.readingnook.memoryplus.ui.reader.ReaderActivity::class.java)
+        intent.putExtra("bookId", note.bookId)
+        intent.putExtra("pageNumber", note.pageNumber)
+        startActivity(intent)
     }
     
     /**

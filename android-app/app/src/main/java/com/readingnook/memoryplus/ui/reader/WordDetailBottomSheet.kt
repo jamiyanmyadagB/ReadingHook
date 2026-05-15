@@ -4,97 +4,112 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.core.content.ContextCompat
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import com.readingnook.memoryplus.databinding.BottomSheetWordDetailBinding
+import com.google.android.material.button.MaterialButton
+import com.google.android.material.chip.Chip
+import com.readingnook.memoryplus.R
 import com.readingnook.memoryplus.model.Note
 
 /**
  * Bottom sheet for displaying detailed word information.
- * 
+ *
  * Shows word meaning, explanation, example sentence, and context.
  * Allows users to save words to their vocabulary notes.
  */
 class WordDetailBottomSheet : BottomSheetDialogFragment() {
-    
-    private var _binding: BottomSheetWordDetailBinding? = null
-    private val binding get() = _binding!!
-    
+
     private var selectedWord: String = ""
     private var currentPageIndex: Int = 0
     private var originalContext: String = ""
-    
+
     private var onSaveNoteClickListener: ((String) -> Unit)? = null
-    
+
+    // Views
+    private lateinit var wordTextView: TextView
+    private lateinit var difficultyChip: Chip
+    private lateinit var closeImageView: View
+    private lateinit var englishMeaningTextView: TextView
+    private lateinit var hinglishExplanationTextView: TextView
+    private lateinit var exampleSentenceTextView: TextView
+    private lateinit var originalContextTextView: TextView
+    private lateinit var saveNoteButton: MaterialButton
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = BottomSheetWordDetailBinding.inflate(inflater, container, false)
-        return binding.root
+        return inflater.inflate(R.layout.bottom_sheet_word_detail, container, false)
     }
-    
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        
+
+        // Bind views
+        wordTextView = view.findViewById(R.id.wordTextView)
+        difficultyChip = view.findViewById(R.id.difficultyChip)
+        closeImageView = view.findViewById(R.id.closeImageView)
+        englishMeaningTextView = view.findViewById(R.id.englishMeaningTextView)
+        hinglishExplanationTextView = view.findViewById(R.id.hinglishExplanationTextView)
+        exampleSentenceTextView = view.findViewById(R.id.exampleSentenceTextView)
+        originalContextTextView = view.findViewById(R.id.originalContextTextView)
+        saveNoteButton = view.findViewById(R.id.saveNoteButton)
+
         // Extract arguments
         arguments?.let { args ->
             selectedWord = args.getString(ARG_WORD, "")
             currentPageIndex = args.getInt(ARG_PAGE_INDEX, 0)
             originalContext = args.getString(ARG_CONTEXT, "")
         }
-        
+
         setupUI()
         setupClickListeners()
     }
-    
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
-    
+
     /**
      * Sets up UI with word information.
      */
     private fun setupUI() {
         // Set word title
-        binding.wordTextView.text = selectedWord
-        
+        wordTextView.text = selectedWord
+
         // Set difficulty (would come from API/database)
         val difficulty = determineDifficulty(selectedWord)
-        binding.difficultyChip.text = difficulty
-        
+        difficultyChip.text = difficulty
+
         val difficultyColor = when (difficulty.lowercase()) {
-            "easy" -> com.readingnook.memoryplus.R.color.difficulty_easy
-            "medium" -> com.readingnook.memoryplus.R.color.difficulty_medium
-            "hard" -> com.readingnook.memoryplus.R.color.difficulty_hard
-            else -> com.readingnook.memoryplus.R.color.primary
+            "easy" -> 0xFF4CAF50.toInt() // Green
+            "medium" -> 0xFFFF9800.toInt() // Orange
+            "hard" -> 0xFFF44336.toInt() // Red
+            else -> 0xFFD4A373.toInt() // Gold accent
         }
-        binding.difficultyChip.setChipBackgroundColorResource(difficultyColor)
-        
+        difficultyChip.setChipBackgroundColorResource(android.R.color.transparent)
+        difficultyChip.setChipBackgroundColorResource(difficultyColor)
+
         // Set word information (would come from API/database)
         setWordInformation(selectedWord)
-        
+
         // Set original context
-        binding.originalContextTextView.text = originalContext
+        originalContextTextView.text = originalContext
     }
-    
+
     /**
      * Sets up click listeners.
      */
     private fun setupClickListeners() {
         // Close button
-        binding.closeImageView.setOnClickListener {
+        closeImageView.setOnClickListener {
             dismiss()
         }
-        
+
         // Save note button
-        binding.saveNoteButton.setOnClickListener {
+        saveNoteButton.setOnClickListener {
             saveWordToNotes()
         }
     }
-    
+
     /**
      * Sets word information based on selected word.
      * In production, this would come from API or local database.
@@ -102,29 +117,27 @@ class WordDetailBottomSheet : BottomSheetDialogFragment() {
     private fun setWordInformation(word: String) {
         // Mock data for demonstration
         val wordInfo = getWordInfo(word)
-        
-        binding.englishMeaningTextView.text = wordInfo.englishMeaning
-        binding.hinglishExplanationTextView.text = wordInfo.hinglishExplanation
-        binding.exampleSentenceTextView.text = wordInfo.exampleSentence
+
+        englishMeaningTextView.text = wordInfo.englishMeaning
+        hinglishExplanationTextView.text = wordInfo.hinglishExplanation
+        exampleSentenceTextView.text = wordInfo.exampleSentence
     }
-    
+
     /**
      * Determines word difficulty based on complexity.
      */
     private fun determineDifficulty(word: String): String {
-        // Simple heuristic for difficulty determination
         return when {
             word.length <= 4 -> "Easy"
             word.length <= 7 -> "Medium"
             else -> "Hard"
         }
     }
-    
+
     /**
      * Gets word information (mock implementation).
      */
     private fun getWordInfo(word: String): WordInfo {
-        // Mock dictionary - in production, this would come from API
         return when (word.lowercase()) {
             "vulnerable" -> WordInfo(
                 englishMeaning = "Open to attack or harm; susceptible to physical or emotional injury.",
@@ -148,44 +161,42 @@ class WordDetailBottomSheet : BottomSheetDialogFragment() {
             )
         }
     }
-    
+
     /**
      * Saves word to vocabulary notes.
      */
     private fun saveWordToNotes() {
         val note = Note(
             id = "",
-            bookId = "", // Would be passed from ReaderActivity
+            bookId = "",
             selectedWord = selectedWord,
             originalText = selectedWord,
-            translatedText = binding.englishMeaningTextView.text.toString(),
-            hinglishExplanation = binding.hinglishExplanationTextView.text.toString(),
-            difficulty = binding.difficultyChip.text.toString(),
+            translatedText = englishMeaningTextView.text.toString(),
+            hinglishExplanation = hinglishExplanationTextView.text.toString(),
+            difficulty = difficultyChip.text.toString(),
             createdAt = java.util.Date().toString(),
             context = originalContext,
             pageNumber = currentPageIndex + 1
         )
-        
-        // Save note (would use ViewModel/Repository)
+
         onSaveNoteClickListener?.invoke(selectedWord)
-        
-        // Show confirmation
+
         android.widget.Toast.makeText(
             requireContext(),
             "Note saved for: $selectedWord",
             android.widget.Toast.LENGTH_SHORT
         ).show()
-        
+
         dismiss()
     }
-    
+
     /**
      * Sets save note click listener.
      */
     fun setOnSaveNoteClickListener(listener: (String) -> Unit) {
         onSaveNoteClickListener = listener
     }
-    
+
     /**
      * Data class for word information.
      */
@@ -194,12 +205,12 @@ class WordDetailBottomSheet : BottomSheetDialogFragment() {
         val hinglishExplanation: String,
         val exampleSentence: String
     )
-    
+
     companion object {
         private const val ARG_WORD = "word"
         private const val ARG_PAGE_INDEX = "page_index"
         private const val ARG_CONTEXT = "context"
-        
+
         /**
          * Creates new instance of WordDetailBottomSheet.
          */

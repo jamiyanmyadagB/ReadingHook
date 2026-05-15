@@ -12,7 +12,7 @@ import kotlinx.coroutines.flow.Flow
  */
 @Dao
 interface NoteRepository {
-    
+
     /**
      * Inserts a new note into the database.
      * 
@@ -21,7 +21,7 @@ interface NoteRepository {
      */
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(note: Note): Long
-    
+
     /**
      * Inserts multiple notes into the database.
      * 
@@ -29,7 +29,7 @@ interface NoteRepository {
      */
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAll(notes: List<Note>)
-    
+
     /**
      * Retrieves all notes ordered by creation date.
      * 
@@ -37,7 +37,7 @@ interface NoteRepository {
      */
     @Query("SELECT * FROM notes ORDER BY createdAt DESC")
     fun getAllNotes(): Flow<List<Note>>
-    
+
     /**
      * Retrieves notes for a specific book.
      * 
@@ -46,7 +46,7 @@ interface NoteRepository {
      */
     @Query("SELECT * FROM notes WHERE bookId = :bookId ORDER BY createdAt DESC")
     fun getNotesByBookId(bookId: String): Flow<List<Note>>
-    
+
     /**
      * Retrieves favorite notes.
      * 
@@ -54,7 +54,7 @@ interface NoteRepository {
      */
     @Query("SELECT * FROM notes WHERE isFavorite = 1 ORDER BY createdAt DESC")
     fun getFavoriteNotes(): Flow<List<Note>>
-    
+
     /**
      * Retrieves notes that need review.
      * 
@@ -67,7 +67,7 @@ interface NoteRepository {
         ORDER BY createdAt DESC
     """)
     fun getNotesNeedingReview(): Flow<List<Note>>
-    
+
     /**
      * Retrieves notes by difficulty level.
      * 
@@ -76,7 +76,7 @@ interface NoteRepository {
      */
     @Query("SELECT * FROM notes WHERE difficulty = :difficulty ORDER BY createdAt DESC")
     fun getNotesByDifficulty(difficulty: String): Flow<List<Note>>
-    
+
     /**
      * Updates an existing note.
      * 
@@ -85,7 +85,7 @@ interface NoteRepository {
      */
     @Update(onConflict = OnConflictStrategy.REPLACE)
     suspend fun update(note: Note): Int
-    
+
     /**
      * Updates favorite status of a note.
      * 
@@ -95,7 +95,7 @@ interface NoteRepository {
      */
     @Query("UPDATE notes SET isFavorite = :isFavorite WHERE id = :noteId")
     suspend fun updateFavoriteStatus(noteId: String, isFavorite: Boolean): Int
-    
+
     /**
      * Updates review information for a note.
      * 
@@ -106,7 +106,7 @@ interface NoteRepository {
      */
     @Query("UPDATE notes SET lastReviewDate = :reviewDate, reviewCount = :reviewCount WHERE id = :noteId")
     suspend fun updateReviewInfo(noteId: String, reviewDate: String, reviewCount: Int): Int
-    
+
     /**
      * Deletes a specific note.
      * 
@@ -115,7 +115,7 @@ interface NoteRepository {
      */
     @Query("DELETE FROM notes WHERE id = :noteId")
     suspend fun deleteNote(noteId: String): Int
-    
+
     /**
      * Deletes all notes for a specific book.
      * 
@@ -124,7 +124,7 @@ interface NoteRepository {
      */
     @Query("DELETE FROM notes WHERE bookId = :bookId")
     suspend fun deleteNotesByBookId(bookId: String): Int
-    
+
     /**
      * Deletes all notes.
      * 
@@ -132,7 +132,7 @@ interface NoteRepository {
      */
     @Query("DELETE FROM notes")
     suspend fun deleteAllNotes(): Int
-    
+
     /**
      * Gets note statistics.
      * 
@@ -148,15 +148,15 @@ interface NoteRepository {
         FROM notes
     """)
     fun getNoteStats(): Flow<NoteStats>
-}
 
-/**
- * Data class for note statistics.
- */
-data class NoteStats(
-    val totalNotes: Int,
-    val favoriteNotes: Int,
-    val easyNotes: Int,
-    val mediumNotes: Int,
-    val hardNotes: Int
-)
+    /**
+     * Data class for note statistics.
+     */
+    data class NoteStats(
+        val totalNotes: Int,
+        val favoriteNotes: Int,
+        val easyNotes: Int,
+        val mediumNotes: Int,
+        val hardNotes: Int
+    )
+}

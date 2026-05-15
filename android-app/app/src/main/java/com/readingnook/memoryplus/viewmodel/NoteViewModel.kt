@@ -53,7 +53,7 @@ class NoteViewModel(
         // Observe filter query changes
         viewModelScope.launch {
             filterQuery.collect { query ->
-                filterNotes(query)
+                applyFilters(query)
             }
         }
     }
@@ -97,10 +97,10 @@ class NoteViewModel(
     }
     
     /**
-     * Filters notes based on current filter query.
+     * Applies filters based on current filter query.
      * Updates filtered notes StateFlow.
      */
-    private fun filterNotes(filter: String) {
+    private fun applyFilters(filter: String) {
         viewModelScope.launch {
             val currentNotes = _notes.value ?: emptyList()
             
@@ -267,8 +267,8 @@ class NoteViewModel(
     /**
      * Gets note statistics.
      */
-    fun getNoteStats(): LiveData<NoteStats> {
-        val result = MutableLiveData<NoteStats>()
+    fun getNoteStats(): LiveData<com.readingnook.memoryplus.repository.NoteRepository.NoteStats> {
+        val result = MutableLiveData<com.readingnook.memoryplus.repository.NoteRepository.NoteStats>()
         
         viewModelScope.launch {
             try {
@@ -277,7 +277,7 @@ class NoteViewModel(
                 }
             } catch (e: Exception) {
                 Log.e(TAG, "Error getting note stats", e)
-                result.postValue(NoteStats(0, 0, 0, 0, 0))
+                result.postValue(com.readingnook.memoryplus.repository.NoteRepository.NoteStats(0, 0, 0, 0, 0))
             }
         }
         
@@ -290,17 +290,6 @@ class NoteViewModel(
     fun clearError() {
         _errorMessage.value = ""
     }
-    
-    /**
-     * Data class for note statistics.
-     */
-    data class NoteStats(
-        val totalNotes: Int,
-        val favoriteNotes: Int,
-        val easyNotes: Int,
-        val mediumNotes: Int,
-        val hardNotes: Int
-    )
     
     override fun onCleared() {
         super.onCleared()

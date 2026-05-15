@@ -23,27 +23,27 @@ import com.readingnook.memoryplus.model.Page
  * and vocabulary note creation functionality.
  */
 class ReaderActivity : AppCompatActivity() {
-    
+
     private lateinit var binding: ActivityReaderBinding
-    
+
     // Book and page data
     private var book: Book? = null
     private var currentPageIndex = 0
     private var showOriginal = false
-    
+
     // Word selection
     private var selectedWord: String? = null
-    
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        
+
         // Initialize view binding
         binding = ActivityReaderBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        
+
         // Get book data from intent
         extractBookData()
-        
+
         // Setup UI
         setupToolbar()
         setupContent()
@@ -51,11 +51,11 @@ class ReaderActivity : AppCompatActivity() {
         setupToggle()
         setupWordSelection()
         setupFab()
-        
+
         // Load first page
         loadCurrentPage()
     }
-    
+
     /**
      * Extracts book data from intent extras.
      */
@@ -63,14 +63,14 @@ class ReaderActivity : AppCompatActivity() {
         book = intent.getParcelableExtra("BOOK")
         currentPageIndex = intent.getIntExtra("CURRENT_PAGE", 0)
     }
-    
+
     /**
      * Sets up toolbar with book information.
      */
     private fun setupToolbar() {
         book?.let { book ->
             binding.bookTitleTextView.text = book.title
-            
+
             // Setup difficulty chip with pastel pink theme colors
             binding.difficultyChip.text = book.difficulty
             val difficultyColor = when (book.difficulty.lowercase()) {
@@ -82,25 +82,25 @@ class ReaderActivity : AppCompatActivity() {
             binding.difficultyChip.setChipBackgroundColorResource(android.R.color.transparent)
             binding.difficultyChip.setChipBackgroundColorResource(difficultyColor)
         }
-        
+
         // Back navigation
         binding.backImageView.setOnClickListener {
             finish()
         }
-        
+
         // Menu options
         binding.menuImageView.setOnClickListener {
             showReaderMenu()
         }
     }
-    
+
     /**
      * Shows reader popup menu.
      */
     private fun showReaderMenu() {
         val popup = PopupMenu(this, binding.menuImageView)
         popup.menuInflater.inflate(com.readingnook.memoryplus.R.menu.reader_menu, popup.menu)
-        
+
         popup.setOnMenuItemClickListener { menuItem ->
             when (menuItem.itemId) {
                 com.readingnook.memoryplus.R.id.action_notes -> {
@@ -118,10 +118,10 @@ class ReaderActivity : AppCompatActivity() {
                 else -> false
             }
         }
-        
+
         popup.show()
     }
-    
+
     /**
      * Navigates to Notes activity.
      */
@@ -129,7 +129,7 @@ class ReaderActivity : AppCompatActivity() {
         val intent = Intent(this, com.readingnook.memoryplus.ui.notes.NotesActivity::class.java)
         startActivity(intent)
     }
-    
+
     /**
      * Shares current book.
      */
@@ -143,23 +143,23 @@ class ReaderActivity : AppCompatActivity() {
             startActivity(Intent.createChooser(shareIntent, "Share Book"))
         }
     }
-    
+
     /**
      * Shows reader settings dialog (placeholder).
      */
     private fun showReaderSettings() {
         android.widget.Toast.makeText(this, "Reader settings coming soon!", android.widget.Toast.LENGTH_SHORT).show()
     }
-    
+
     /**
      * Sets up content display area.
      */
     private fun setupContent() {
         // Make text selectable for word selection
-        binding.contentTextView.textIsSelectable = true
+        binding.contentTextView.setTextIsSelectable(true)
         binding.contentTextView.movementMethod = LinkMovementMethod.getInstance()
     }
-    
+
     /**
      * Sets up page navigation controls.
      */
@@ -171,7 +171,7 @@ class ReaderActivity : AppCompatActivity() {
                 loadCurrentPage()
             }
         }
-        
+
         // Next page
         binding.nextImageView.setOnClickListener {
             book?.let { book ->
@@ -181,11 +181,11 @@ class ReaderActivity : AppCompatActivity() {
                 }
             }
         }
-        
+
         // Update navigation state
         updateNavigationState()
     }
-    
+
     /**
      * Sets up original/translated text toggle.
      */
@@ -197,7 +197,7 @@ class ReaderActivity : AppCompatActivity() {
                 loadCurrentPage()
             }
         }
-        
+
         binding.translatedTextView.setOnClickListener {
             if (showOriginal) {
                 showOriginal = false
@@ -205,10 +205,10 @@ class ReaderActivity : AppCompatActivity() {
                 loadCurrentPage()
             }
         }
-        
+
         updateToggleState()
     }
-    
+
     /**
      * Sets up word selection functionality.
      */
@@ -222,7 +222,7 @@ class ReaderActivity : AppCompatActivity() {
             }
             true
         }
-        
+
         // Handle text selection changes
         binding.contentTextView.setOnClickListener {
             val selectedText = getSelectedText()
@@ -232,7 +232,7 @@ class ReaderActivity : AppCompatActivity() {
             }
         }
     }
-    
+
     /**
      * Sets up save note FAB.
      */
@@ -243,7 +243,7 @@ class ReaderActivity : AppCompatActivity() {
             }
         }
     }
-    
+
     /**
      * Loads current page content.
      */
@@ -251,29 +251,29 @@ class ReaderActivity : AppCompatActivity() {
         book?.let { book ->
             if (currentPageIndex < book.pages.size) {
                 val page = book.pages[currentPageIndex]
-                
+
                 // Update page indicators
                 binding.pageIndicatorTextView.text = "Page ${currentPageIndex + 1} of ${book.pages.size}"
                 binding.pageNumberTextView.text = "${currentPageIndex + 1}"
-                
+
                 // Update content
-                val content = if (showOriginal) {
+                var content = if (showOriginal) {
                     page.originalText
                 } else {
                     page.translatedText
                 }
-                
+
                 binding.contentTextView.text = content
-                
+
                 // Update navigation state
                 updateNavigationState()
-                
+
                 // Save reading progress
                 saveReadingProgress()
             }
         }
     }
-    
+
     /**
      * Updates toggle button states with pastel pink theme colors.
      */
@@ -286,7 +286,7 @@ class ReaderActivity : AppCompatActivity() {
             binding.translatedTextView.setTextColor(0xFF4B2E2E.toInt())
         }
     }
-    
+
     /**
      * Updates navigation button states.
      */
@@ -295,27 +295,27 @@ class ReaderActivity : AppCompatActivity() {
             // Previous button
             binding.previousImageView.alpha = if (currentPageIndex > 0) 1.0f else 0.5f
             binding.previousImageView.isEnabled = currentPageIndex > 0
-            
+
             // Next button
             binding.nextImageView.alpha = if (currentPageIndex < book.pages.size - 1) 1.0f else 0.5f
             binding.nextImageView.isEnabled = currentPageIndex < book.pages.size - 1
         }
     }
-    
+
     /**
      * Gets currently selected text.
      */
     private fun getSelectedText(): String {
         val selectionStart = binding.contentTextView.selectionStart
         val selectionEnd = binding.contentTextView.selectionEnd
-        
+
         return if (selectionStart >= 0 && selectionEnd > selectionStart) {
             binding.contentTextView.text.substring(selectionStart, selectionEnd).trim()
         } else {
             ""
         }
     }
-    
+
     /**
      * Shows word detail bottom sheet.
      */
@@ -323,14 +323,14 @@ class ReaderActivity : AppCompatActivity() {
         val wordDetailBottomSheet = WordDetailBottomSheet.newInstance(word, currentPageIndex)
         wordDetailBottomSheet.show(supportFragmentManager, "word_detail_bottom_sheet")
     }
-    
+
     /**
      * Creates note from selected word.
      */
     private fun createNoteFromSelection(word: String) {
         book?.let { book ->
             val page = book.pages[currentPageIndex]
-            
+
             // Create note with selected word and context
             val note = com.readingnook.memoryplus.model.Note(
                 id = "",
@@ -342,13 +342,13 @@ class ReaderActivity : AppCompatActivity() {
                 difficulty = book.difficulty,
                 createdAt = java.util.Date().toString()
             )
-            
+
             // Save note (would use ViewModel/Repository)
             // For now, show confirmation
             android.widget.Toast.makeText(this, "Note saved for: $word", android.widget.Toast.LENGTH_SHORT).show()
         }
     }
-    
+
     /**
      * Saves reading progress.
      */
@@ -359,7 +359,7 @@ class ReaderActivity : AppCompatActivity() {
             android.util.Log.d("ReaderActivity", "Progress: Page ${currentPageIndex + 1}/${book.pages.size}")
         }
     }
-    
+
     override fun onBackPressed() {
         // Return to main activity
         super.onBackPressed()

@@ -23,7 +23,9 @@ data class Note(
     val createdAt: String = "",
     val isFavorite: Boolean = false,
     val reviewCount: Int = 0,
-    val lastReviewDate: String = ""
+    val lastReviewDate: String = "",
+    val context: String = "",
+    val pageNumber: Int = 0
 ) {
     
     companion object {

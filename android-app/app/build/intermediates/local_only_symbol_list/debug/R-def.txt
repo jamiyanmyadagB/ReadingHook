@@ -83,8 +83,6 @@ drawable ic_note_add
 drawable ic_notes
 drawable ic_profile
 drawable ic_search
-font lato_regular
-font playfair_display_bold
 id action_notes
 id action_settings
 id action_share
@@ -195,6 +193,7 @@ menu reader_menu
 mipmap ic_launcher
 string action_bookmark
 string action_cancel
+string action_close
 string action_delete
 string action_download
 string action_edit

@@ -225,8 +225,7 @@
                 android:layout_marginBottom="8dp"
                 app:trackColor="#E8AEB7"
                 app:indicatorColor="#D4A373"
-                app:trackThickness="8dp"
-                app:indicatorThickness="8dp" />
+                app:trackThickness="8dp" />
 
             <TextView
                 android:id="@+id/progressTextView"

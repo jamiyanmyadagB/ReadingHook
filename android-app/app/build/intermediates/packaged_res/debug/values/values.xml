@@ -49,6 +49,7 @@
     <color name="warning">#FF9800</color>
     <string name="action_bookmark">Bookmark</string>
     <string name="action_cancel">Cancel</string>
+    <string name="action_close">Close</string>
     <string name="action_delete">Delete</string>
     <string name="action_download">Download</string>
     <string name="action_edit">Edit</string>

@@ -165,7 +165,7 @@ class MainActivity : AppCompatActivity() {
         }
         
         // Observe errors
-        bookViewModel.error.observe(this) { message ->
+        bookViewModel.errorMessage.observe(this) { message ->
             if (message.isNotEmpty()) {
                 showError(message)
             }
