@@ -8,22 +8,25 @@
 8        android:minSdkVersion="26"
 9        android:targetSdkVersion="34" />
 10
-11    <!-- Required permissions for ReadingNook Memory+ -->
+11    <!-- Permissions -->
 12    <uses-permission android:name="android.permission.INTERNET" />
-12-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:6:5-67
-12-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:6:22-64
+12-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:6:5-67
+12-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:6:22-64
 13    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-13-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:7:5-80
-13-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:7:22-77
-14    <uses-permission
-14-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:8:5-9:38
-15        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
-15-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:8:22-78
-16        android:maxSdkVersion="28" />
-16-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:9:9-35
-17    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
-17-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:10:5-11:40
-17-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:10:22-79
+13-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:7:5-80
+13-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:7:22-77
+14    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+14-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:8:5-81
+14-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:8:22-78
+15    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+15-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:9:5-76
+15-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:9:22-73
+16    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+16-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:10:5-75
+16-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:10:22-72
+17    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+17-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:11:5-75
+17-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:11:22-72
 18
 19    <permission
 19-->[androidx.core:core:1.13.0] C:\Users\baata\.gradle\caches\transforms-3\54c5ea7b527f955ba2222510e9e6ca4c\transformed\core-1.13.0\AndroidManifest.xml:22:5-24:47
@@ -32,245 +35,238 @@
 21        android:protectionLevel="signature" />
 21-->[androidx.core:core:1.13.0] C:\Users\baata\.gradle\caches\transforms-3\54c5ea7b527f955ba2222510e9e6ca4c\transformed\core-1.13.0\AndroidManifest.xml:24:9-44
 22
-23    <uses-permission android:name="com.readingnook.memoryplus.debug.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" /> <!-- Network security configuration for modern Android -->
+23    <uses-permission android:name="com.readingnook.memoryplus.debug.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
 23-->[androidx.core:core:1.13.0] C:\Users\baata\.gradle\caches\transforms-3\54c5ea7b527f955ba2222510e9e6ca4c\transformed\core-1.13.0\AndroidManifest.xml:26:5-97
 23-->[androidx.core:core:1.13.0] C:\Users\baata\.gradle\caches\transforms-3\54c5ea7b527f955ba2222510e9e6ca4c\transformed\core-1.13.0\AndroidManifest.xml:26:22-94
-24    <application
-24-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:14:5-96:19
-25        android:name="com.readingnook.memoryplus.ReadingNookApplication"
-25-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:15:9-47
-26        android:allowBackup="true"
-26-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:16:9-35
-27        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-27-->[androidx.core:core:1.13.0] C:\Users\baata\.gradle\caches\transforms-3\54c5ea7b527f955ba2222510e9e6ca4c\transformed\core-1.13.0\AndroidManifest.xml:28:18-86
-28        android:backupAgent="com.readingnook.memoryplus.ReadingNookBackupAgent"
-28-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:17:9-54
-29        android:dataExtractionRules="@xml/data_extraction_rules"
-29-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:18:9-65
-30        android:debuggable="true"
-31        android:extractNativeLibs="false"
-32        android:fullBackupContent="@xml/backup_rules"
-32-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:19:9-54
-33        android:icon="@mipmap/ic_launcher"
-33-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:20:9-43
-34        android:label="@string/app_name"
-34-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:21:9-41
-35        android:networkSecurityConfig="@xml/network_security_config"
-35-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:24:9-69
-36        android:requestLegacyExternalStorage="true"
-36-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:23:9-52
-37        android:testOnly="true"
-38        android:theme="@style/Theme.ReadingNookMemoryPlus" >
-38-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:22:9-59
-39
-40        <!-- Splash Activity - App Entry Point -->
-41        <activity
-41-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:28:9-38:20
-42            android:name="com.readingnook.memoryplus.ui.splash.SplashActivity"
-42-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:29:13-53
-43            android:exported="true"
-43-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:30:13-36
-44            android:launchMode="singleTop"
-44-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:33:13-43
-45            android:screenOrientation="portrait"
-45-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:32:13-49
-46            android:theme="@style/Theme.App.Starting" >
-46-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:31:13-54
-47            <intent-filter>
-47-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:34:13-37:29
-48                <action android:name="android.intent.action.MAIN" />
-48-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:35:17-69
-48-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:35:25-66
-49
-50                <category android:name="android.intent.category.LAUNCHER" />
-50-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:36:17-77
-50-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:36:27-74
-51            </intent-filter>
-52        </activity>
-53
-54        <!-- Authentication Activity -->
-55        <activity
-55-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:41:9-46:58
-56            android:name="com.readingnook.memoryplus.ui.auth.AuthActivity"
-56-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:42:13-49
-57            android:exported="false"
-57-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:43:13-37
-58            android:screenOrientation="portrait"
-58-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:45:13-49
-59            android:theme="@style/Theme.ReadingNookMemoryPlus"
-59-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:44:13-63
-60            android:windowSoftInputMode="adjustResize" />
-60-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:46:13-55
-61
-62        <!-- Main Activity - Book Library -->
-63        <activity
-63-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:49:9-54:58
-64            android:name="com.readingnook.memoryplus.ui.main.MainActivity"
-64-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:50:13-49
-65            android:exported="false"
-65-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:51:13-37
-66            android:screenOrientation="portrait"
-66-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:53:13-49
-67            android:theme="@style/Theme.ReadingNookMemoryPlus"
-67-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:52:13-63
-68            android:windowSoftInputMode="adjustResize" />
-68-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:54:13-55
-69
-70        <!-- Upload Activity -->
-71        <activity
-71-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:57:9-62:58
-72            android:name="com.readingnook.memoryplus.ui.upload.UploadActivity"
-72-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:58:13-53
-73            android:exported="false"
-73-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:59:13-37
-74            android:screenOrientation="portrait"
-74-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:61:13-49
-75            android:theme="@style/Theme.ReadingNookMemoryPlus"
-75-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:60:13-63
-76            android:windowSoftInputMode="adjustResize" />
-76-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:62:13-55
-77
-78        <!-- Reader Activity -->
-79        <activity
-79-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:65:9-70:58
-80            android:name="com.readingnook.memoryplus.ui.reader.ReaderActivity"
-80-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:66:13-53
-81            android:exported="false"
-81-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:67:13-37
-82            android:screenOrientation="portrait"
-82-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:69:13-49
-83            android:theme="@style/Theme.ReadingNookMemoryPlus"
-83-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:68:13-63
-84            android:windowSoftInputMode="adjustResize" />
-84-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:70:13-55
-85
-86        <!-- Notes Activity -->
-87        <activity
-87-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:73:9-78:58
-88            android:name="com.readingnook.memoryplus.ui.notes.NotesActivity"
-88-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:74:13-51
-89            android:exported="false"
-89-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:75:13-37
-90            android:screenOrientation="portrait"
-90-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:77:13-49
-91            android:theme="@style/Theme.ReadingNookMemoryPlus"
-91-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:76:13-63
-92            android:windowSoftInputMode="adjustResize" />
-92-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:78:13-55
-93
-94        <!-- File provider for sharing -->
-95        <provider
-96            android:name="androidx.core.content.FileProvider"
-96-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:82:13-62
-97            android:authorities="com.readingnook.memoryplus.debug.fileprovider"
-97-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:83:13-64
-98            android:exported="false"
-98-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:84:13-37
-99            android:grantUriPermissions="true" >
-99-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:85:13-47
-100            <meta-data
-100-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:86:13-88:54
-101                android:name="android.support.FILE_PROVIDER_PATHS"
-101-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:87:17-67
-102                android:resource="@xml/file_paths" />
-102-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:88:17-51
-103        </provider>
-104
-105        <!-- Backup agent for data persistence -->
-106        <meta-data
-106-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:92:9-94:51
-107            android:name="com.google.android.backup.api_key"
-107-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:93:13-61
-108            android:value="your_backup_api_key" />
-108-->D:\6th semester\Android\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:94:13-48
-109
-110        <provider
-110-->[androidx.emoji2:emoji2:1.2.0] C:\Users\baata\.gradle\caches\transforms-3\51c225e8532d7e09695c15cc04d4e631\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
-111            android:name="androidx.startup.InitializationProvider"
-111-->[androidx.emoji2:emoji2:1.2.0] C:\Users\baata\.gradle\caches\transforms-3\51c225e8532d7e09695c15cc04d4e631\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
-112            android:authorities="com.readingnook.memoryplus.debug.androidx-startup"
-112-->[androidx.emoji2:emoji2:1.2.0] C:\Users\baata\.gradle\caches\transforms-3\51c225e8532d7e09695c15cc04d4e631\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
-113            android:exported="false" >
-113-->[androidx.emoji2:emoji2:1.2.0] C:\Users\baata\.gradle\caches\transforms-3\51c225e8532d7e09695c15cc04d4e631\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
+24
+25    <application
+25-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:13:5-91:19
+26        android:name="com.readingnook.memoryplus.ReadingNookApplication"
+26-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:14:9-47
+27        android:allowBackup="true"
+27-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:15:9-35
+28        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+28-->[androidx.core:core:1.13.0] C:\Users\baata\.gradle\caches\transforms-3\54c5ea7b527f955ba2222510e9e6ca4c\transformed\core-1.13.0\AndroidManifest.xml:28:18-86
+29        android:debuggable="true"
+30        android:extractNativeLibs="false"
+31        android:icon="@mipmap/ic_launcher"
+31-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:16:9-43
+32        android:label="@string/app_name"
+32-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:17:9-41
+33        android:requestLegacyExternalStorage="true"
+33-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:20:9-52
+34        android:supportsRtl="true"
+34-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:18:9-35
+35        android:testOnly="true"
+36        android:theme="@style/Theme.ReadingNookMemoryPlus" >
+36-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:19:9-59
+37
+38        <!-- Splash Activity -->
+39        <activity
+39-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:24:9-33:20
+40            android:name="com.readingnook.memoryplus.ui.splash.SplashActivity"
+40-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:25:13-53
+41            android:exported="true"
+41-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:26:13-36
+42            android:screenOrientation="portrait"
+42-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:28:13-49
+43            android:theme="@style/Theme.Splash.FullScreen" >
+43-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:27:13-59
+44            <intent-filter>
+44-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:29:13-32:29
+45                <action android:name="android.intent.action.MAIN" />
+45-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:30:17-69
+45-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:30:25-66
+46
+47                <category android:name="android.intent.category.LAUNCHER" />
+47-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:31:17-77
+47-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:31:27-74
+48            </intent-filter>
+49        </activity>
+50
+51        <!-- Authentication Activity -->
+52        <activity
+52-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:36:9-41:58
+53            android:name="com.readingnook.memoryplus.ui.auth.AuthActivity"
+53-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:37:13-49
+54            android:exported="false"
+54-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:38:13-37
+55            android:screenOrientation="portrait"
+55-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:40:13-49
+56            android:theme="@style/Theme.Auth"
+56-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:39:13-46
+57            android:windowSoftInputMode="adjustResize" />
+57-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:41:13-55
+58
+59        <!-- Main Activity - Book Library -->
+60        <activity
+60-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:44:9-49:58
+61            android:name="com.readingnook.memoryplus.ui.main.MainActivity"
+61-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:45:13-49
+62            android:exported="false"
+62-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:46:13-37
+63            android:screenOrientation="portrait"
+63-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:48:13-49
+64            android:theme="@style/Theme.ReadingNookMemoryPlus"
+64-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:47:13-63
+65            android:windowSoftInputMode="adjustResize" />
+65-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:49:13-55
+66
+67        <!-- Upload Activity -->
+68        <activity
+68-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:52:9-57:58
+69            android:name="com.readingnook.memoryplus.ui.upload.UploadActivity"
+69-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:53:13-53
+70            android:exported="false"
+70-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:54:13-37
+71            android:screenOrientation="portrait"
+71-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:56:13-49
+72            android:theme="@style/Theme.ReadingNookMemoryPlus"
+72-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:55:13-63
+73            android:windowSoftInputMode="adjustResize" />
+73-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:57:13-55
+74
+75        <!-- Reader Activity -->
+76        <activity
+76-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:60:9-65:58
+77            android:name="com.readingnook.memoryplus.ui.reader.ReaderActivity"
+77-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:61:13-53
+78            android:exported="false"
+78-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:62:13-37
+79            android:screenOrientation="portrait"
+79-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:64:13-49
+80            android:theme="@style/Theme.ReadingNookMemoryPlus"
+80-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:63:13-63
+81            android:windowSoftInputMode="adjustResize" />
+81-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:65:13-55
+82
+83        <!-- Notes Activity -->
+84        <activity
+84-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:68:9-73:58
+85            android:name="com.readingnook.memoryplus.ui.notes.NotesActivity"
+85-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:69:13-51
+86            android:exported="false"
+86-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:70:13-37
+87            android:screenOrientation="portrait"
+87-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:72:13-49
+88            android:theme="@style/Theme.ReadingNookMemoryPlus"
+88-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:71:13-63
+89            android:windowSoftInputMode="adjustResize" />
+89-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:73:13-55
+90
+91        <!-- File provider for sharing -->
+92        <provider
+93            android:name="androidx.core.content.FileProvider"
+93-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:77:13-62
+94            android:authorities="com.readingnook.memoryplus.debug.fileprovider"
+94-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:78:13-64
+95            android:exported="false"
+95-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:79:13-37
+96            android:grantUriPermissions="true" >
+96-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:80:13-47
+97            <meta-data
+97-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:81:13-83:54
+98                android:name="android.support.FILE_PROVIDER_PATHS"
+98-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:82:17-67
+99                android:resource="@xml/file_paths" />
+99-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:83:17-51
+100        </provider>
+101
+102        <!-- Backup agent for data persistence -->
+103        <meta-data
+103-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:87:9-89:51
+104            android:name="com.google.android.backup.api_key"
+104-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:88:13-61
+105            android:value="your_backup_api_key" />
+105-->D:\AndroidProjects\ReadingHookProject\android-app\app\src\main\AndroidManifest.xml:89:13-48
+106
+107        <provider
+107-->[androidx.emoji2:emoji2:1.2.0] C:\Users\baata\.gradle\caches\transforms-3\51c225e8532d7e09695c15cc04d4e631\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+108            android:name="androidx.startup.InitializationProvider"
+108-->[androidx.emoji2:emoji2:1.2.0] C:\Users\baata\.gradle\caches\transforms-3\51c225e8532d7e09695c15cc04d4e631\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
+109            android:authorities="com.readingnook.memoryplus.debug.androidx-startup"
+109-->[androidx.emoji2:emoji2:1.2.0] C:\Users\baata\.gradle\caches\transforms-3\51c225e8532d7e09695c15cc04d4e631\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
+110            android:exported="false" >
+110-->[androidx.emoji2:emoji2:1.2.0] C:\Users\baata\.gradle\caches\transforms-3\51c225e8532d7e09695c15cc04d4e631\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
+111            <meta-data
+111-->[androidx.emoji2:emoji2:1.2.0] C:\Users\baata\.gradle\caches\transforms-3\51c225e8532d7e09695c15cc04d4e631\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+112                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+112-->[androidx.emoji2:emoji2:1.2.0] C:\Users\baata\.gradle\caches\transforms-3\51c225e8532d7e09695c15cc04d4e631\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
+113                android:value="androidx.startup" />
+113-->[androidx.emoji2:emoji2:1.2.0] C:\Users\baata\.gradle\caches\transforms-3\51c225e8532d7e09695c15cc04d4e631\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
 114            <meta-data
-114-->[androidx.emoji2:emoji2:1.2.0] C:\Users\baata\.gradle\caches\transforms-3\51c225e8532d7e09695c15cc04d4e631\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
-115                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-115-->[androidx.emoji2:emoji2:1.2.0] C:\Users\baata\.gradle\caches\transforms-3\51c225e8532d7e09695c15cc04d4e631\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
+114-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\baata\.gradle\caches\transforms-3\4bbf9e33ffefdc0f1f86ca85eb80aa22\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:29:13-31:52
+115                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+115-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\baata\.gradle\caches\transforms-3\4bbf9e33ffefdc0f1f86ca85eb80aa22\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:30:17-78
 116                android:value="androidx.startup" />
-116-->[androidx.emoji2:emoji2:1.2.0] C:\Users\baata\.gradle\caches\transforms-3\51c225e8532d7e09695c15cc04d4e631\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
+116-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\baata\.gradle\caches\transforms-3\4bbf9e33ffefdc0f1f86ca85eb80aa22\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:31:17-49
 117            <meta-data
-117-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\baata\.gradle\caches\transforms-3\4bbf9e33ffefdc0f1f86ca85eb80aa22\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:29:13-31:52
-118                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-118-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\baata\.gradle\caches\transforms-3\4bbf9e33ffefdc0f1f86ca85eb80aa22\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:30:17-78
+117-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\baata\.gradle\caches\transforms-3\3de4af53588b6988799ead4e7b91094b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
+118                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+118-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\baata\.gradle\caches\transforms-3\3de4af53588b6988799ead4e7b91094b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
 119                android:value="androidx.startup" />
-119-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\baata\.gradle\caches\transforms-3\4bbf9e33ffefdc0f1f86ca85eb80aa22\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:31:17-49
-120            <meta-data
-120-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\baata\.gradle\caches\transforms-3\3de4af53588b6988799ead4e7b91094b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
-121                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-121-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\baata\.gradle\caches\transforms-3\3de4af53588b6988799ead4e7b91094b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
-122                android:value="androidx.startup" />
-122-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\baata\.gradle\caches\transforms-3\3de4af53588b6988799ead4e7b91094b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
-123        </provider>
-124
+119-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\baata\.gradle\caches\transforms-3\3de4af53588b6988799ead4e7b91094b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
+120        </provider>
+121
+122        <uses-library
+122-->[androidx.window:window:1.0.0] C:\Users\baata\.gradle\caches\transforms-3\efe5f24547640074edb7c7d0bef51a0a\transformed\window-1.0.0\AndroidManifest.xml:25:9-27:40
+123            android:name="androidx.window.extensions"
+123-->[androidx.window:window:1.0.0] C:\Users\baata\.gradle\caches\transforms-3\efe5f24547640074edb7c7d0bef51a0a\transformed\window-1.0.0\AndroidManifest.xml:26:13-54
+124            android:required="false" />
+124-->[androidx.window:window:1.0.0] C:\Users\baata\.gradle\caches\transforms-3\efe5f24547640074edb7c7d0bef51a0a\transformed\window-1.0.0\AndroidManifest.xml:27:13-37
 125        <uses-library
-125-->[androidx.window:window:1.0.0] C:\Users\baata\.gradle\caches\transforms-3\efe5f24547640074edb7c7d0bef51a0a\transformed\window-1.0.0\AndroidManifest.xml:25:9-27:40
-126            android:name="androidx.window.extensions"
-126-->[androidx.window:window:1.0.0] C:\Users\baata\.gradle\caches\transforms-3\efe5f24547640074edb7c7d0bef51a0a\transformed\window-1.0.0\AndroidManifest.xml:26:13-54
+125-->[androidx.window:window:1.0.0] C:\Users\baata\.gradle\caches\transforms-3\efe5f24547640074edb7c7d0bef51a0a\transformed\window-1.0.0\AndroidManifest.xml:28:9-30:40
+126            android:name="androidx.window.sidecar"
+126-->[androidx.window:window:1.0.0] C:\Users\baata\.gradle\caches\transforms-3\efe5f24547640074edb7c7d0bef51a0a\transformed\window-1.0.0\AndroidManifest.xml:29:13-51
 127            android:required="false" />
-127-->[androidx.window:window:1.0.0] C:\Users\baata\.gradle\caches\transforms-3\efe5f24547640074edb7c7d0bef51a0a\transformed\window-1.0.0\AndroidManifest.xml:27:13-37
-128        <uses-library
-128-->[androidx.window:window:1.0.0] C:\Users\baata\.gradle\caches\transforms-3\efe5f24547640074edb7c7d0bef51a0a\transformed\window-1.0.0\AndroidManifest.xml:28:9-30:40
-129            android:name="androidx.window.sidecar"
-129-->[androidx.window:window:1.0.0] C:\Users\baata\.gradle\caches\transforms-3\efe5f24547640074edb7c7d0bef51a0a\transformed\window-1.0.0\AndroidManifest.xml:29:13-51
-130            android:required="false" />
-130-->[androidx.window:window:1.0.0] C:\Users\baata\.gradle\caches\transforms-3\efe5f24547640074edb7c7d0bef51a0a\transformed\window-1.0.0\AndroidManifest.xml:30:13-37
-131
-132        <service
-132-->[androidx.room:room-runtime:2.6.1] C:\Users\baata\.gradle\caches\transforms-3\1905060edceb2c0087e7765309433a00\transformed\room-runtime-2.6.1\AndroidManifest.xml:24:9-28:63
-133            android:name="androidx.room.MultiInstanceInvalidationService"
-133-->[androidx.room:room-runtime:2.6.1] C:\Users\baata\.gradle\caches\transforms-3\1905060edceb2c0087e7765309433a00\transformed\room-runtime-2.6.1\AndroidManifest.xml:25:13-74
-134            android:directBootAware="true"
-134-->[androidx.room:room-runtime:2.6.1] C:\Users\baata\.gradle\caches\transforms-3\1905060edceb2c0087e7765309433a00\transformed\room-runtime-2.6.1\AndroidManifest.xml:26:13-43
-135            android:exported="false" />
-135-->[androidx.room:room-runtime:2.6.1] C:\Users\baata\.gradle\caches\transforms-3\1905060edceb2c0087e7765309433a00\transformed\room-runtime-2.6.1\AndroidManifest.xml:27:13-37
-136
-137        <receiver
-137-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\baata\.gradle\caches\transforms-3\3de4af53588b6988799ead4e7b91094b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
-138            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-138-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\baata\.gradle\caches\transforms-3\3de4af53588b6988799ead4e7b91094b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
-139            android:directBootAware="false"
-139-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\baata\.gradle\caches\transforms-3\3de4af53588b6988799ead4e7b91094b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
-140            android:enabled="true"
-140-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\baata\.gradle\caches\transforms-3\3de4af53588b6988799ead4e7b91094b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
-141            android:exported="true"
-141-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\baata\.gradle\caches\transforms-3\3de4af53588b6988799ead4e7b91094b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
-142            android:permission="android.permission.DUMP" >
-142-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\baata\.gradle\caches\transforms-3\3de4af53588b6988799ead4e7b91094b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
+127-->[androidx.window:window:1.0.0] C:\Users\baata\.gradle\caches\transforms-3\efe5f24547640074edb7c7d0bef51a0a\transformed\window-1.0.0\AndroidManifest.xml:30:13-37
+128
+129        <service
+129-->[androidx.room:room-runtime:2.6.1] C:\Users\baata\.gradle\caches\transforms-3\1905060edceb2c0087e7765309433a00\transformed\room-runtime-2.6.1\AndroidManifest.xml:24:9-28:63
+130            android:name="androidx.room.MultiInstanceInvalidationService"
+130-->[androidx.room:room-runtime:2.6.1] C:\Users\baata\.gradle\caches\transforms-3\1905060edceb2c0087e7765309433a00\transformed\room-runtime-2.6.1\AndroidManifest.xml:25:13-74
+131            android:directBootAware="true"
+131-->[androidx.room:room-runtime:2.6.1] C:\Users\baata\.gradle\caches\transforms-3\1905060edceb2c0087e7765309433a00\transformed\room-runtime-2.6.1\AndroidManifest.xml:26:13-43
+132            android:exported="false" />
+132-->[androidx.room:room-runtime:2.6.1] C:\Users\baata\.gradle\caches\transforms-3\1905060edceb2c0087e7765309433a00\transformed\room-runtime-2.6.1\AndroidManifest.xml:27:13-37
+133
+134        <receiver
+134-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\baata\.gradle\caches\transforms-3\3de4af53588b6988799ead4e7b91094b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
+135            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+135-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\baata\.gradle\caches\transforms-3\3de4af53588b6988799ead4e7b91094b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
+136            android:directBootAware="false"
+136-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\baata\.gradle\caches\transforms-3\3de4af53588b6988799ead4e7b91094b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
+137            android:enabled="true"
+137-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\baata\.gradle\caches\transforms-3\3de4af53588b6988799ead4e7b91094b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
+138            android:exported="true"
+138-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\baata\.gradle\caches\transforms-3\3de4af53588b6988799ead4e7b91094b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
+139            android:permission="android.permission.DUMP" >
+139-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\baata\.gradle\caches\transforms-3\3de4af53588b6988799ead4e7b91094b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
+140            <intent-filter>
+140-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\baata\.gradle\caches\transforms-3\3de4af53588b6988799ead4e7b91094b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
+141                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+141-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\baata\.gradle\caches\transforms-3\3de4af53588b6988799ead4e7b91094b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
+141-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\baata\.gradle\caches\transforms-3\3de4af53588b6988799ead4e7b91094b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
+142            </intent-filter>
 143            <intent-filter>
-143-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\baata\.gradle\caches\transforms-3\3de4af53588b6988799ead4e7b91094b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
-144                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-144-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\baata\.gradle\caches\transforms-3\3de4af53588b6988799ead4e7b91094b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
-144-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\baata\.gradle\caches\transforms-3\3de4af53588b6988799ead4e7b91094b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
+143-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\baata\.gradle\caches\transforms-3\3de4af53588b6988799ead4e7b91094b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
+144                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+144-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\baata\.gradle\caches\transforms-3\3de4af53588b6988799ead4e7b91094b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
+144-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\baata\.gradle\caches\transforms-3\3de4af53588b6988799ead4e7b91094b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
 145            </intent-filter>
 146            <intent-filter>
-146-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\baata\.gradle\caches\transforms-3\3de4af53588b6988799ead4e7b91094b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
-147                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-147-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\baata\.gradle\caches\transforms-3\3de4af53588b6988799ead4e7b91094b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
-147-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\baata\.gradle\caches\transforms-3\3de4af53588b6988799ead4e7b91094b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
+146-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\baata\.gradle\caches\transforms-3\3de4af53588b6988799ead4e7b91094b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
+147                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+147-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\baata\.gradle\caches\transforms-3\3de4af53588b6988799ead4e7b91094b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
+147-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\baata\.gradle\caches\transforms-3\3de4af53588b6988799ead4e7b91094b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
 148            </intent-filter>
 149            <intent-filter>
-149-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\baata\.gradle\caches\transforms-3\3de4af53588b6988799ead4e7b91094b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
-150                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-150-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\baata\.gradle\caches\transforms-3\3de4af53588b6988799ead4e7b91094b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
-150-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\baata\.gradle\caches\transforms-3\3de4af53588b6988799ead4e7b91094b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
+149-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\baata\.gradle\caches\transforms-3\3de4af53588b6988799ead4e7b91094b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
+150                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+150-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\baata\.gradle\caches\transforms-3\3de4af53588b6988799ead4e7b91094b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
+150-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\baata\.gradle\caches\transforms-3\3de4af53588b6988799ead4e7b91094b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
 151            </intent-filter>
-152            <intent-filter>
-152-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\baata\.gradle\caches\transforms-3\3de4af53588b6988799ead4e7b91094b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
-153                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-153-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\baata\.gradle\caches\transforms-3\3de4af53588b6988799ead4e7b91094b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
-153-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\baata\.gradle\caches\transforms-3\3de4af53588b6988799ead4e7b91094b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
-154            </intent-filter>
-155        </receiver>
-156    </application>
-157
-158</manifest>
+152        </receiver>
+153    </application>
+154
+155</manifest>

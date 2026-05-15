@@ -65,6 +65,9 @@ public final class ActivityReaderBinding implements ViewBinding {
   public final FloatingActionButton saveNoteFab;
 
   @NonNull
+  public final LinearLayout toggleSwitch;
+
+  @NonNull
   public final Toolbar toolbar;
 
   @NonNull
@@ -77,8 +80,8 @@ public final class ActivityReaderBinding implements ViewBinding {
       @NonNull ImageView menuImageView, @NonNull ImageView nextImageView,
       @NonNull TextView originalTextView, @NonNull TextView pageIndicatorTextView,
       @NonNull TextView pageNumberTextView, @NonNull ImageView previousImageView,
-      @NonNull FloatingActionButton saveNoteFab, @NonNull Toolbar toolbar,
-      @NonNull TextView translatedTextView) {
+      @NonNull FloatingActionButton saveNoteFab, @NonNull LinearLayout toggleSwitch,
+      @NonNull Toolbar toolbar, @NonNull TextView translatedTextView) {
     this.rootView = rootView;
     this.backImageView = backImageView;
     this.bookTitleTextView = bookTitleTextView;
@@ -93,6 +96,7 @@ public final class ActivityReaderBinding implements ViewBinding {
     this.pageNumberTextView = pageNumberTextView;
     this.previousImageView = previousImageView;
     this.saveNoteFab = saveNoteFab;
+    this.toggleSwitch = toggleSwitch;
     this.toolbar = toolbar;
     this.translatedTextView = translatedTextView;
   }
@@ -202,6 +206,12 @@ public final class ActivityReaderBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.toggleSwitch;
+      LinearLayout toggleSwitch = ViewBindings.findChildViewById(rootView, id);
+      if (toggleSwitch == null) {
+        break missingId;
+      }
+
       id = R.id.toolbar;
       Toolbar toolbar = ViewBindings.findChildViewById(rootView, id);
       if (toolbar == null) {
@@ -217,7 +227,8 @@ public final class ActivityReaderBinding implements ViewBinding {
       return new ActivityReaderBinding((CoordinatorLayout) rootView, backImageView,
           bookTitleTextView, bottomNavigationLayout, contentScrollView, contentTextView,
           difficultyChip, menuImageView, nextImageView, originalTextView, pageIndicatorTextView,
-          pageNumberTextView, previousImageView, saveNoteFab, toolbar, translatedTextView);
+          pageNumberTextView, previousImageView, saveNoteFab, toggleSwitch, toolbar,
+          translatedTextView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

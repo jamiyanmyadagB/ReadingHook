@@ -9,6 +9,7 @@ import android.text.style.BackgroundColorSpan
 import android.text.style.ClickableSpan
 import android.view.MotionEvent
 import android.view.View
+import android.widget.PopupMenu
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.readingnook.memoryplus.databinding.ActivityReaderBinding
@@ -70,14 +71,15 @@ class ReaderActivity : AppCompatActivity() {
         book?.let { book ->
             binding.bookTitleTextView.text = book.title
             
-            // Setup difficulty chip
+            // Setup difficulty chip with pastel pink theme colors
             binding.difficultyChip.text = book.difficulty
             val difficultyColor = when (book.difficulty.lowercase()) {
-                "easy" -> com.readingnook.memoryplus.R.color.difficulty_easy
-                "medium" -> com.readingnook.memoryplus.R.color.difficulty_medium
-                "hard" -> com.readingnook.memoryplus.R.color.difficulty_hard
-                else -> com.readingnook.memoryplus.R.color.primary
+                "easy" -> 0xFF4CAF50.toInt() // Green
+                "medium" -> 0xFFFF9800.toInt() // Orange
+                "hard" -> 0xFFF44336.toInt() // Red
+                else -> 0xFFD4A373.toInt() // Gold accent
             }
+            binding.difficultyChip.setChipBackgroundColorResource(android.R.color.transparent)
             binding.difficultyChip.setChipBackgroundColorResource(difficultyColor)
         }
         
@@ -86,10 +88,67 @@ class ReaderActivity : AppCompatActivity() {
             finish()
         }
         
-        // Menu options (placeholder for future functionality)
+        // Menu options
         binding.menuImageView.setOnClickListener {
-            // Show reading options menu
+            showReaderMenu()
         }
+    }
+    
+    /**
+     * Shows reader popup menu.
+     */
+    private fun showReaderMenu() {
+        val popup = PopupMenu(this, binding.menuImageView)
+        popup.menuInflater.inflate(com.readingnook.memoryplus.R.menu.reader_menu, popup.menu)
+        
+        popup.setOnMenuItemClickListener { menuItem ->
+            when (menuItem.itemId) {
+                com.readingnook.memoryplus.R.id.action_notes -> {
+                    navigateToNotes()
+                    true
+                }
+                com.readingnook.memoryplus.R.id.action_share -> {
+                    shareBook()
+                    true
+                }
+                com.readingnook.memoryplus.R.id.action_settings -> {
+                    showReaderSettings()
+                    true
+                }
+                else -> false
+            }
+        }
+        
+        popup.show()
+    }
+    
+    /**
+     * Navigates to Notes activity.
+     */
+    private fun navigateToNotes() {
+        val intent = Intent(this, com.readingnook.memoryplus.ui.notes.NotesActivity::class.java)
+        startActivity(intent)
+    }
+    
+    /**
+     * Shares current book.
+     */
+    private fun shareBook() {
+        book?.let { book ->
+            val shareIntent = Intent(Intent.ACTION_SEND).apply {
+                type = "text/plain"
+                putExtra(Intent.EXTRA_SUBJECT, book.title)
+                putExtra(Intent.EXTRA_TEXT, "I'm reading ${book.title} on ReadingNook Memory+")
+            }
+            startActivity(Intent.createChooser(shareIntent, "Share Book"))
+        }
+    }
+    
+    /**
+     * Shows reader settings dialog (placeholder).
+     */
+    private fun showReaderSettings() {
+        android.widget.Toast.makeText(this, "Reader settings coming soon!", android.widget.Toast.LENGTH_SHORT).show()
     }
     
     /**
@@ -216,23 +275,15 @@ class ReaderActivity : AppCompatActivity() {
     }
     
     /**
-     * Updates toggle button states.
+     * Updates toggle button states with pastel pink theme colors.
      */
     private fun updateToggleState() {
         if (showOriginal) {
-            binding.originalTextView.setTextColor(
-                ContextCompat.getColor(this, com.readingnook.memoryplus.R.color.text_primary)
-            )
-            binding.translatedTextView.setTextColor(
-                ContextCompat.getColor(this, com.readingnook.memoryplus.R.color.text_hint)
-            )
+            binding.originalTextView.setTextColor(0xFF4B2E2E.toInt())
+            binding.translatedTextView.setTextColor(0xFF8D6E63.toInt())
         } else {
-            binding.originalTextView.setTextColor(
-                ContextCompat.getColor(this, com.readingnook.memoryplus.R.color.text_hint)
-            )
-            binding.translatedTextView.setTextColor(
-                ContextCompat.getColor(this, com.readingnook.memoryplus.R.color.text_primary)
-            )
+            binding.originalTextView.setTextColor(0xFF8D6E63.toInt())
+            binding.translatedTextView.setTextColor(0xFF4B2E2E.toInt())
         }
     }
     

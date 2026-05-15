@@ -1,50 +1,50 @@
 [
     {
-        "merged": "C:\\Users\\baata\\.gradle\\daemon\\8.2\\com.readingnook.memoryplus.app-mergeDebugResources-55:\\layout\\activity_splash.xml",
-        "source": "C:\\Users\\baata\\.gradle\\daemon\\8.2\\com.readingnook.memoryplus.app-main-58:\\layout\\activity_splash.xml"
+        "merged": "com.readingnook.memoryplus.app-mergeDebugResources-55:/layout/dialog_forgot_password.xml",
+        "source": "com.readingnook.memoryplus.app-main-58:/layout/dialog_forgot_password.xml"
     },
     {
-        "merged": "C:\\Users\\baata\\.gradle\\daemon\\8.2\\com.readingnook.memoryplus.app-mergeDebugResources-55:\\layout\\bottom_sheet_word_detail.xml",
-        "source": "C:\\Users\\baata\\.gradle\\daemon\\8.2\\com.readingnook.memoryplus.app-main-58:\\layout\\bottom_sheet_word_detail.xml"
+        "merged": "com.readingnook.memoryplus.app-mergeDebugResources-55:/layout/bottom_sheet_login.xml",
+        "source": "com.readingnook.memoryplus.app-main-58:/layout/bottom_sheet_login.xml"
     },
     {
-        "merged": "C:\\Users\\baata\\.gradle\\daemon\\8.2\\com.readingnook.memoryplus.app-mergeDebugResources-55:\\layout\\item_note.xml",
-        "source": "C:\\Users\\baata\\.gradle\\daemon\\8.2\\com.readingnook.memoryplus.app-main-58:\\layout\\item_note.xml"
+        "merged": "com.readingnook.memoryplus.app-mergeDebugResources-55:/layout/activity_upload.xml",
+        "source": "com.readingnook.memoryplus.app-main-58:/layout/activity_upload.xml"
     },
     {
-        "merged": "C:\\Users\\baata\\.gradle\\daemon\\8.2\\com.readingnook.memoryplus.app-mergeDebugResources-55:\\layout\\bottom_sheet_signup.xml",
-        "source": "C:\\Users\\baata\\.gradle\\daemon\\8.2\\com.readingnook.memoryplus.app-main-58:\\layout\\bottom_sheet_signup.xml"
+        "merged": "com.readingnook.memoryplus.app-mergeDebugResources-55:/layout/item_book.xml",
+        "source": "com.readingnook.memoryplus.app-main-58:/layout/item_book.xml"
     },
     {
-        "merged": "C:\\Users\\baata\\.gradle\\daemon\\8.2\\com.readingnook.memoryplus.app-mergeDebugResources-55:\\layout\\item_book.xml",
-        "source": "C:\\Users\\baata\\.gradle\\daemon\\8.2\\com.readingnook.memoryplus.app-main-58:\\layout\\item_book.xml"
+        "merged": "com.readingnook.memoryplus.app-mergeDebugResources-55:/layout/bottom_sheet_signup.xml",
+        "source": "com.readingnook.memoryplus.app-main-58:/layout/bottom_sheet_signup.xml"
     },
     {
-        "merged": "C:\\Users\\baata\\.gradle\\daemon\\8.2\\com.readingnook.memoryplus.app-mergeDebugResources-55:\\layout\\activity_notes.xml",
-        "source": "C:\\Users\\baata\\.gradle\\daemon\\8.2\\com.readingnook.memoryplus.app-main-58:\\layout\\activity_notes.xml"
-    },
-    {
-        "merged": "C:\\Users\\baata\\.gradle\\daemon\\8.2\\com.readingnook.memoryplus.app-mergeDebugResources-55:\\layout\\bottom_sheet_login.xml",
-        "source": "C:\\Users\\baata\\.gradle\\daemon\\8.2\\com.readingnook.memoryplus.app-main-58:\\layout\\bottom_sheet_login.xml"
-    },
-    {
-        "merged": "C:\\Users\\baata\\.gradle\\daemon\\8.2\\com.readingnook.memoryplus.app-mergeDebugResources-55:\\layout\\dialog_forgot_password.xml",
-        "source": "C:\\Users\\baata\\.gradle\\daemon\\8.2\\com.readingnook.memoryplus.app-main-58:\\layout\\dialog_forgot_password.xml"
-    },
-    {
-        "merged": "C:\\Users\\baata\\.gradle\\daemon\\8.2\\com.readingnook.memoryplus.app-mergeDebugResources-55:\\layout\\activity_main.xml",
-        "source": "C:\\Users\\baata\\.gradle\\daemon\\8.2\\com.readingnook.memoryplus.app-main-58:\\layout\\activity_main.xml"
+        "merged": "com.readingnook.memoryplus.app-mergeDebugResources-55:/layout/activity_splash.xml",
+        "source": "com.readingnook.memoryplus.app-main-58:/layout/activity_splash.xml"
     },
     {
         "merged": "com.readingnook.memoryplus.app-mergeDebugResources-55:/layout/activity_reader.xml",
         "source": "com.readingnook.memoryplus.app-main-58:/layout/activity_reader.xml"
     },
     {
-        "merged": "C:\\Users\\baata\\.gradle\\daemon\\8.2\\com.readingnook.memoryplus.app-mergeDebugResources-55:\\layout\\activity_reader.xml",
-        "source": "C:\\Users\\baata\\.gradle\\daemon\\8.2\\com.readingnook.memoryplus.app-main-58:\\layout\\activity_reader.xml"
+        "merged": "com.readingnook.memoryplus.app-mergeDebugResources-55:/layout/activity_notes.xml",
+        "source": "com.readingnook.memoryplus.app-main-58:/layout/activity_notes.xml"
     },
     {
-        "merged": "C:\\Users\\baata\\.gradle\\daemon\\8.2\\com.readingnook.memoryplus.app-mergeDebugResources-55:\\layout\\activity_auth.xml",
-        "source": "C:\\Users\\baata\\.gradle\\daemon\\8.2\\com.readingnook.memoryplus.app-main-58:\\layout\\activity_auth.xml"
+        "merged": "com.readingnook.memoryplus.app-mergeDebugResources-55:/layout/activity_main.xml",
+        "source": "com.readingnook.memoryplus.app-main-58:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.readingnook.memoryplus.app-mergeDebugResources-55:/layout/bottom_sheet_word_detail.xml",
+        "source": "com.readingnook.memoryplus.app-main-58:/layout/bottom_sheet_word_detail.xml"
+    },
+    {
+        "merged": "com.readingnook.memoryplus.app-mergeDebugResources-55:/layout/item_note.xml",
+        "source": "com.readingnook.memoryplus.app-main-58:/layout/item_note.xml"
+    },
+    {
+        "merged": "com.readingnook.memoryplus.app-mergeDebugResources-55:/layout/activity_auth.xml",
+        "source": "com.readingnook.memoryplus.app-main-58:/layout/activity_auth.xml"
     }
 ]

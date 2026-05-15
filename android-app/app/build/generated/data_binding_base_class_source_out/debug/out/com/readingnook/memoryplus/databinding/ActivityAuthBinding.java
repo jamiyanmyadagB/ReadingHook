@@ -25,7 +25,7 @@ public final class ActivityAuthBinding implements ViewBinding {
   public final TextView appNameTextView;
 
   @NonNull
-  public final TextView guestModeTextView;
+  public final MaterialButton guestModeButton;
 
   @NonNull
   public final MaterialButton loginButton;
@@ -40,12 +40,12 @@ public final class ActivityAuthBinding implements ViewBinding {
   public final TextView subtitleTextView;
 
   private ActivityAuthBinding(@NonNull FrameLayout rootView, @NonNull TextView appNameTextView,
-      @NonNull TextView guestModeTextView, @NonNull MaterialButton loginButton,
+      @NonNull MaterialButton guestModeButton, @NonNull MaterialButton loginButton,
       @NonNull ImageView logoImageView, @NonNull MaterialButton signUpButton,
       @NonNull TextView subtitleTextView) {
     this.rootView = rootView;
     this.appNameTextView = appNameTextView;
-    this.guestModeTextView = guestModeTextView;
+    this.guestModeButton = guestModeButton;
     this.loginButton = loginButton;
     this.logoImageView = logoImageView;
     this.signUpButton = signUpButton;
@@ -85,9 +85,9 @@ public final class ActivityAuthBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.guestModeTextView;
-      TextView guestModeTextView = ViewBindings.findChildViewById(rootView, id);
-      if (guestModeTextView == null) {
+      id = R.id.guestModeButton;
+      MaterialButton guestModeButton = ViewBindings.findChildViewById(rootView, id);
+      if (guestModeButton == null) {
         break missingId;
       }
 
@@ -115,7 +115,7 @@ public final class ActivityAuthBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityAuthBinding((FrameLayout) rootView, appNameTextView, guestModeTextView,
+      return new ActivityAuthBinding((FrameLayout) rootView, appNameTextView, guestModeButton,
           loginButton, logoImageView, signUpButton, subtitleTextView);
     }
     String missingId = rootView.getResources().getResourceName(id);

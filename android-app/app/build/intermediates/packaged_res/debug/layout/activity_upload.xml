@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF8F5"
+    tools:context=".ui.upload.UploadActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="32dp">
+
+            <ImageView
+                android:id="@+id/backImageView"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@android:drawable/ic_menu_close_clear_cancel"
+                android:contentDescription="@string/cd_back"
+                android:tint="#4B2E2E"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:padding="8dp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/playfair_display_bold"
+                android:text="Upload Book"
+                android:textColor="#4B2E2E"
+                android:textSize="24sp"
+                android:letterSpacing="0.02"
+                android:gravity="center" />
+
+        </LinearLayout>
+
+        <!-- Upload area -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/uploadAreaCard"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginBottom="24dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="#FFFFFF"
+            app:strokeWidth="2dp"
+            app:strokeColor="#D4A373"
+            android:clickable="true"
+            android:focusable="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="32dp">
+
+                <ImageView
+                    android:id="@+id/uploadIconImageView"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:src="@drawable/ic_add"
+                    android:contentDescription="@string/cd_upload_book"
+                    android:tint="#D4A373"
+                    android:alpha="0.6"
+                    android:layout_marginBottom="16dp" />
+
+                <TextView
+                    android:id="@+id/uploadTitleTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:fontFamily="@font/playfair_display_bold"
+                    android:text="Tap to select PDF"
+                    android:textColor="#4B2E2E"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/uploadSubtitleTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="PDF files only"
+                    android:textColor="#8D6E63"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- File info section (initially hidden) -->
+        <LinearLayout
+            android:id="@+id/fileInfoLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="24dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/lato_regular"
+                android:text="Selected File"
+                android:textColor="#8D6E63"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/fileNameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:fontFamily="@font/lato_regular"
+                android:textColor="#4B2E2E"
+                android:textSize="14sp"
+                tools:text="example_book.pdf" />
+
+            <TextView
+                android:id="@+id/fileSizeTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:fontFamily="@font/lato_regular"
+                android:textColor="#8D6E63"
+                android:textSize="12sp"
+                tools:text="2.5 MB" />
+
+            <TextView
+                android:id="@+id/pageCountTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato_regular"
+                android:textColor="#8D6E63"
+                android:textSize="12sp"
+                tools:text="Estimated 12 pages" />
+
+        </LinearLayout>
+
+        <!-- Book title field -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/bookTitleLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:boxBackgroundColor="#FFFFFF"
+            app:boxStrokeColor="#D4A373"
+            app:boxStrokeWidth="1dp"
+            app:hintTextColor="#8D6E63"
+            app:boxCornerRadiusBottomEnd="16dp"
+            app:boxCornerRadiusBottomStart="16dp"
+            app:boxCornerRadiusTopEnd="16dp"
+            app:boxCornerRadiusTopStart="16dp"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:enabled="false">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/bookTitleEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato_regular"
+                android:hint="Book Title"
+                android:inputType="text"
+                android:textColor="#4B2E2E"
+                android:textSize="16sp"
+                android:padding="16dp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Language dropdown -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/languageLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:boxBackgroundColor="#FFFFFF"
+            app:boxStrokeColor="#D4A373"
+            app:boxStrokeWidth="1dp"
+            app:hintTextColor="#8D6E63"
+            app:boxCornerRadiusBottomEnd="16dp"
+            app:boxCornerRadiusBottomStart="16dp"
+            app:boxCornerRadiusTopEnd="16dp"
+            app:boxCornerRadiusTopStart="16dp"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:enabled="false">
+
+            <AutoCompleteTextView
+                android:id="@+id/languageAutoCompleteTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato_regular"
+                android:hint="Language"
+                android:inputType="none"
+                android:textColor="#4B2E2E"
+                android:textSize="16sp"
+                android:padding="16dp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Progress section (initially hidden) -->
+        <LinearLayout
+            android:id="@+id/progressLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="24dp"
+            android:visibility="gone">
+
+            <com.google.android.material.progressindicator.LinearProgressIndicator
+                android:id="@+id/progressIndicator"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                app:trackColor="#E8AEB7"
+                app:indicatorColor="#D4A373"
+                app:trackThickness="8dp"
+                app:indicatorThickness="8dp" />
+
+            <TextView
+                android:id="@+id/progressTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato_regular"
+                android:textColor="#8D6E63"
+                android:textSize="14sp"
+                tools:text="Extracting text..." />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/cancelUploadButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_button_secondary"
+                android:fontFamily="@font/lato_regular"
+                android:text="Cancel"
+                android:textColor="#D4A373"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:cornerRadius="12dp"
+                app:rippleColor="#20D4AF37" />
+
+        </LinearLayout>
+
+        <!-- Upload button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/uploadButton"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/bg_button_primary"
+            android:fontFamily="@font/lato_regular"
+            android:text="Upload &amp; Translate"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:elevation="4dp"
+            app:cornerRadius="16dp"
+            app:rippleColor="#40FFFFFF"
+            android:enabled="false" />
+
+        <!-- Cancel button -->
+        <TextView
+            android:id="@+id/cancelButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/lato_regular"
+            android:text="Cancel"
+            android:textColor="#8D6E63"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="16dp" />
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

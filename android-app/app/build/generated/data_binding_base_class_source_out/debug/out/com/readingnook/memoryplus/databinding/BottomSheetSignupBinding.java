@@ -4,6 +4,7 @@ package com.readingnook.memoryplus.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -21,6 +22,9 @@ public final class BottomSheetSignupBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
+  public final ImageView closeButton;
+
+  @NonNull
   public final TextInputEditText confirmPasswordEditText;
 
   @NonNull
@@ -35,11 +39,12 @@ public final class BottomSheetSignupBinding implements ViewBinding {
   @NonNull
   public final MaterialButton signUpButton;
 
-  private BottomSheetSignupBinding(@NonNull LinearLayout rootView,
+  private BottomSheetSignupBinding(@NonNull LinearLayout rootView, @NonNull ImageView closeButton,
       @NonNull TextInputEditText confirmPasswordEditText, @NonNull TextInputEditText emailEditText,
       @NonNull TextInputEditText nameEditText, @NonNull TextInputEditText passwordEditText,
       @NonNull MaterialButton signUpButton) {
     this.rootView = rootView;
+    this.closeButton = closeButton;
     this.confirmPasswordEditText = confirmPasswordEditText;
     this.emailEditText = emailEditText;
     this.nameEditText = nameEditText;
@@ -74,6 +79,12 @@ public final class BottomSheetSignupBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.closeButton;
+      ImageView closeButton = ViewBindings.findChildViewById(rootView, id);
+      if (closeButton == null) {
+        break missingId;
+      }
+
       id = R.id.confirmPasswordEditText;
       TextInputEditText confirmPasswordEditText = ViewBindings.findChildViewById(rootView, id);
       if (confirmPasswordEditText == null) {
@@ -104,8 +115,8 @@ public final class BottomSheetSignupBinding implements ViewBinding {
         break missingId;
       }
 
-      return new BottomSheetSignupBinding((LinearLayout) rootView, confirmPasswordEditText,
-          emailEditText, nameEditText, passwordEditText, signUpButton);
+      return new BottomSheetSignupBinding((LinearLayout) rootView, closeButton,
+          confirmPasswordEditText, emailEditText, nameEditText, passwordEditText, signUpButton);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

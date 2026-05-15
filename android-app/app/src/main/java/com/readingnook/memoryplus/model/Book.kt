@@ -1,5 +1,7 @@
 package com.readingnook.memoryplus.model
 
+import android.os.Parcel
+import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import org.json.JSONObject
@@ -9,6 +11,7 @@ import org.json.JSONObject
  * 
  * Contains metadata and page content for translated books.
  * Designed for efficient serialization and Room database compatibility.
+ * Implements Parcelable for safe intent passing between activities.
  */
 @Entity(tableName = "books")
 data class Book(
@@ -24,7 +27,7 @@ data class Book(
     val isDownloaded: Boolean = false,
     val lastReadPage: Int = 0,
     val isCompleted: Boolean = false
-) {
+) : Parcelable {
     
     companion object {
         /**
@@ -111,6 +114,49 @@ data class Book(
             pages.getOrNull(lastReadPage)
         } else {
             null
+        }
+    }
+    
+    // Parcelable implementation
+    constructor(parcel: Parcel) : this(
+        id = parcel.readString() ?: "",
+        title = parcel.readString() ?: "",
+        originalLanguage = parcel.readString() ?: "",
+        translatedLanguage = parcel.readString() ?: "",
+        difficulty = parcel.readString() ?: "",
+        pages = parcel.createTypedArrayList(Page.CREATOR) ?: emptyList(),
+        createdAt = parcel.readString() ?: "",
+        pageCount = parcel.readInt(),
+        isDownloaded = parcel.readByte() != 0.toByte(),
+        lastReadPage = parcel.readInt(),
+        isCompleted = parcel.readByte() != 0.toByte()
+    )
+    
+    override fun writeToParcel(parcel: Parcel, flags: Int) {
+        parcel.writeString(id)
+        parcel.writeString(title)
+        parcel.writeString(originalLanguage)
+        parcel.writeString(translatedLanguage)
+        parcel.writeString(difficulty)
+        parcel.writeTypedList(pages)
+        parcel.writeString(createdAt)
+        parcel.writeInt(pageCount)
+        parcel.writeByte(if (isDownloaded) 1 else 0)
+        parcel.writeInt(lastReadPage)
+        parcel.writeByte(if (isCompleted) 1 else 0)
+    }
+    
+    override fun describeContents(): Int {
+        return 0
+    }
+    
+    companion object CREATOR : Parcelable.Creator<Book> {
+        override fun createFromParcel(parcel: Parcel): Book {
+            return Book(parcel)
+        }
+        
+        override fun newArray(size: Int): Array<Book?> {
+            return arrayOfNulls(size)
         }
     }
 }

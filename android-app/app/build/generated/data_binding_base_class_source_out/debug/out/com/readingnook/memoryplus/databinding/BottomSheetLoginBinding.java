@@ -4,6 +4,7 @@ package com.readingnook.memoryplus.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -22,6 +23,9 @@ public final class BottomSheetLoginBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
+  public final ImageView closeButton;
+
+  @NonNull
   public final TextInputEditText emailEditText;
 
   @NonNull
@@ -33,10 +37,11 @@ public final class BottomSheetLoginBinding implements ViewBinding {
   @NonNull
   public final TextInputEditText passwordEditText;
 
-  private BottomSheetLoginBinding(@NonNull LinearLayout rootView,
+  private BottomSheetLoginBinding(@NonNull LinearLayout rootView, @NonNull ImageView closeButton,
       @NonNull TextInputEditText emailEditText, @NonNull TextView forgotPasswordTextView,
       @NonNull MaterialButton loginButton, @NonNull TextInputEditText passwordEditText) {
     this.rootView = rootView;
+    this.closeButton = closeButton;
     this.emailEditText = emailEditText;
     this.forgotPasswordTextView = forgotPasswordTextView;
     this.loginButton = loginButton;
@@ -70,6 +75,12 @@ public final class BottomSheetLoginBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.closeButton;
+      ImageView closeButton = ViewBindings.findChildViewById(rootView, id);
+      if (closeButton == null) {
+        break missingId;
+      }
+
       id = R.id.emailEditText;
       TextInputEditText emailEditText = ViewBindings.findChildViewById(rootView, id);
       if (emailEditText == null) {
@@ -94,7 +105,7 @@ public final class BottomSheetLoginBinding implements ViewBinding {
         break missingId;
       }
 
-      return new BottomSheetLoginBinding((LinearLayout) rootView, emailEditText,
+      return new BottomSheetLoginBinding((LinearLayout) rootView, closeButton, emailEditText,
           forgotPasswordTextView, loginButton, passwordEditText);
     }
     String missingId = rootView.getResources().getResourceName(id);

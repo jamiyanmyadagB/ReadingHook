@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.button.MaterialButton;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.readingnook.memoryplus.R;
@@ -47,13 +48,17 @@ public final class ActivityMainBinding implements ViewBinding {
   public final TextInputEditText searchEditText;
 
   @NonNull
+  public final MaterialButton uploadEmptyButton;
+
+  @NonNull
   public final FloatingActionButton uploadFab;
 
   private ActivityMainBinding(@NonNull CoordinatorLayout rootView,
       @NonNull TextView bookCountTextView, @NonNull RecyclerView booksRecyclerView,
       @NonNull BottomNavigationView bottomNavigationView, @NonNull LinearLayout emptyStateLayout,
       @NonNull TextView greetingTextView, @NonNull ImageView profileImageView,
-      @NonNull TextInputEditText searchEditText, @NonNull FloatingActionButton uploadFab) {
+      @NonNull TextInputEditText searchEditText, @NonNull MaterialButton uploadEmptyButton,
+      @NonNull FloatingActionButton uploadFab) {
     this.rootView = rootView;
     this.bookCountTextView = bookCountTextView;
     this.booksRecyclerView = booksRecyclerView;
@@ -62,6 +67,7 @@ public final class ActivityMainBinding implements ViewBinding {
     this.greetingTextView = greetingTextView;
     this.profileImageView = profileImageView;
     this.searchEditText = searchEditText;
+    this.uploadEmptyButton = uploadEmptyButton;
     this.uploadFab = uploadFab;
   }
 
@@ -134,6 +140,12 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.uploadEmptyButton;
+      MaterialButton uploadEmptyButton = ViewBindings.findChildViewById(rootView, id);
+      if (uploadEmptyButton == null) {
+        break missingId;
+      }
+
       id = R.id.uploadFab;
       FloatingActionButton uploadFab = ViewBindings.findChildViewById(rootView, id);
       if (uploadFab == null) {
@@ -142,7 +154,7 @@ public final class ActivityMainBinding implements ViewBinding {
 
       return new ActivityMainBinding((CoordinatorLayout) rootView, bookCountTextView,
           booksRecyclerView, bottomNavigationView, emptyStateLayout, greetingTextView,
-          profileImageView, searchEditText, uploadFab);
+          profileImageView, searchEditText, uploadEmptyButton, uploadFab);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
